@@ -33,6 +33,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /*
+     * FUNTIONS TO CHECK DIRECTION OF THE MOVEMENT
+     */
     private bool IsMovingUp()
     {
         return Input.GetKey(KeyCode.W);
@@ -50,6 +53,9 @@ public class PlayerMovement : MonoBehaviour
         return Input.GetKey(KeyCode.D);
     }
 
+    /*
+     * FUNCTION TO TRANSLATE THE PLAYER 
+     */
     private void Translate(Vector3 direction)
     {
         transform.Translate(direction * playerSettings.speed * Time.deltaTime);
