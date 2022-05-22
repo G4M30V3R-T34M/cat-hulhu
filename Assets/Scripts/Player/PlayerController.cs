@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private Item weapon;
-    private GameObject itemToPick;
-    private bool pickableItem;
+    public Item weapon;
+    public GameObject itemToPick;
+    public bool pickableItem;
 
     private void Update()  {
         if (CanPickUp() && IsTryingToPick()) {

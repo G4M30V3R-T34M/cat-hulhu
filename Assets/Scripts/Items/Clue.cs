@@ -9,6 +9,7 @@ public class Clue : Item
     }
 
     protected override void ActionOnPick() {
+        // TODO open canvas and  display clue description
         Debug.Log(itemSettings.description);
     }
 }

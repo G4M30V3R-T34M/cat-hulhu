@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Collider2D))]
 public abstract class Item : MonoBehaviour
 {
     [SerializeField] protected ItemScriptableObject itemSettings;
 
     protected SpriteRenderer itemSprite;
+    protected Collider2D collider;
 
     protected void Awake()
     {
         itemSprite = GetComponent<SpriteRenderer>();
+        collider = GetComponent<Collider2D>();
     }
 
     public bool IsWeapon()
@@ -23,13 +26,13 @@ public abstract class Item : MonoBehaviour
     {
         this.transform.position = position;
         itemSprite.enabled = true;
-        // Maybe it will be needed to enable collider
+        collider.enabled = true;
     }
 
     public void Pick()
     {
         itemSprite.enabled = false;
-        // Maybe it will be needed to disable collider too
+        collider.enabled = false;
 
         ActionOnPick();
     }
@@ -37,6 +40,13 @@ public abstract class Item : MonoBehaviour
     /*
      * Abstract functions
      */
+    /// <summary>
+    /// Abstract function for the item actions when is picked
+    /// </summary>
     protected abstract void ActionOnPick();
+
+    /// <summary>
+    /// Abstract function for the item when user attack
+    /// </summary>
     public abstract void Attack();
 }
