@@ -36,7 +36,6 @@ public class CameraController : MonoBehaviour
     private void LookAhead()
     {
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y));
-        Vector3 x = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
         Vector3 direction = mousePosition - this.transform.position;
         if (player.GetComponent<SpriteRenderer>().isVisible == true)
         {
