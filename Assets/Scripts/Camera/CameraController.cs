@@ -8,13 +8,11 @@ public class CameraController : MonoBehaviour
     [SerializeField] CameraSettingsScriptable cameraSettings;
 
     private bool followPlayer;
-    private Camera camera;
-
-    private Vector3 screenBounds;
+    private Camera mainCamera;
 
     void Start()
     {
-        camera = Camera.main;
+        mainCamera = Camera.main;
     }
 
     void Update()
@@ -37,9 +35,8 @@ public class CameraController : MonoBehaviour
 
     private void LookAhead()
     {
-        Vector3 mousePosition = camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y));
-        Vector3 x = camera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
-        print(x);
+        Vector3 mousePosition = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y));
+        Vector3 x = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height));
         Vector3 direction = mousePosition - this.transform.position;
         if (player.GetComponent<SpriteRenderer>().isVisible == true)
         {
