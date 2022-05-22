@@ -11,26 +11,22 @@ public abstract class Item : MonoBehaviour
     protected SpriteRenderer itemSprite;
     protected Collider2D collider;
 
-    protected void Awake()
-    {
+    protected void Awake() {
         itemSprite = GetComponent<SpriteRenderer>();
         collider = GetComponent<Collider2D>();
     }
 
-    public bool IsWeapon()
-    {
+    public bool IsWeapon() {
         return itemSettings.isWeapon;
     }
 
-    public void DropItem(Vector3 position)
-    {
+    public void DropItem(Vector3 position) {
         this.transform.position = position;
         itemSprite.enabled = true;
         collider.enabled = true;
     }
 
-    public void Pick()
-    {
+    public void Pick() {
         itemSprite.enabled = false;
         collider.enabled = false;
 

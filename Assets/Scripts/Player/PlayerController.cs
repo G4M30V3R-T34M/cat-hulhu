@@ -8,10 +8,11 @@ public class PlayerController : MonoBehaviour
     public GameObject itemToPick;
     public bool pickableItem;
 
-    private void Update()  {
+    private void Update() {
         if (CanPickUp() && IsTryingToPick()) {
             PickItem();
-        } else if (IsTryingToAttack() && CanAttack()) {
+        }
+        else if (IsTryingToAttack() && CanAttack()) {
             AttackWithWeapon();
         }
     }
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour
         item.Pick();
         pickableItem = false;
         if (item.IsWeapon()) {
-            if(weapon != null) {
+            if (weapon != null) {
                 weapon.DropItem(this.transform.position);
             }
             weapon = item;
@@ -55,13 +56,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private bool IsPickable(Collider2D collision)
-    {
+    private bool IsPickable(Collider2D collision) {
         return collision.gameObject.layer == (int)Layers.Items;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
+    private void OnTriggerExit2D(Collider2D collision) {
         if (IsPickable(collision)) {
             itemToPick = null;
             pickableItem = false;
