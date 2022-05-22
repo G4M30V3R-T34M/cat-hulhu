@@ -58,6 +58,6 @@ public class PlayerMovement : MonoBehaviour
      */
     private void Translate(Vector3 direction)
     {
-        transform.Translate(direction * playerSettings.speed * Time.deltaTime);
+        transform.Translate(direction * playerSettings.speed * Time.deltaTime, Space.World);
     }
 }
