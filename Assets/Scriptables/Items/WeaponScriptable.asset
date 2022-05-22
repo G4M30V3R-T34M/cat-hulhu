@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 093b625742528aa49b879345c1cd6cbc, type: 3}
   m_Name: WeaponScriptable
   m_EditorClassIdentifier: 
-  isWeapon: 0
-  damage: 0
+  isWeapon: 1
+  damage: 5
   description: 
