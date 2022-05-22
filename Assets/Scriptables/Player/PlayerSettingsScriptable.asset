@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: PlayerSettingsScriptable
   m_EditorClassIdentifier: 
   speed: 5
+  investigatorName: "a\u200B"
+  color1: {r: 1, g: 0.6865276, b: 0.30591792, a: 1}
+  color2: {r: 1, g: 0.79236734, b: 0.045833945, a: 1}
+  color3: {r: 1, g: 0.21840799, b: 0.5958988, a: 1}

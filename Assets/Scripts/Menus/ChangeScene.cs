@@ -14,4 +14,8 @@ public class ChangeScene : MonoBehaviour
     public void LoadCredits () {
         SceneManager.LoadScene((int)Scenes.Credits);
     }
+
+    public void LoadGameIntro() {
+        SceneManager.LoadScene((int)Scenes.GameIntro);
+    }
 }
