@@ -15,6 +15,8 @@ public abstract class Item : MonoBehaviour
         itemSprite = GetComponent<SpriteRenderer>();
         collider = GetComponent<Collider2D>();
     }
+    
+    protected virtual void Start() { }
 
     public bool IsWeapon() {
         return itemSettings.isWeapon;
