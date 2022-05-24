@@ -94,12 +94,12 @@ GameObject:
   m_Component:
   - component: {fileID: 9037195888536516088}
   - component: {fileID: 9037195888536516089}
-  - component: {fileID: 9037195888536516094}
+  - component: {fileID: 3846150742349929794}
   - component: {fileID: 9037195888536516091}
   - component: {fileID: 9037195888536516090}
   - component: {fileID: 6890732986203064780}
   m_Layer: 6
-  m_Name: clue
+  m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,7 +162,7 @@ SpriteRenderer:
   m_SortingLayerID: -256215403
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1462012287, guid: 8ee9141ad1ee6f04eb74bdb416e122c9, type: 3}
+  m_Sprite: {fileID: -672442004, guid: 8ee9141ad1ee6f04eb74bdb416e122c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -173,7 +173,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9037195888536516094
+--- !u!114 &3846150742349929794
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,10 +182,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9037195888536516095}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec4d41ccc7ade5348a2d0ed6af076d58, type: 3}
+  m_Script: {fileID: 11500000, guid: df5b0c5a70a1c044bb14e569c7bc2dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSettings: {fileID: 11400000, guid: 061d6845d3aef2f44b061ac5fae918c0, type: 2}
+  itemSettings: {fileID: 11400000, guid: 6e5f1c3bd14de954aaa7587a4602513b, type: 2}
   basicItem: 1
   id: 
 --- !u!50 &9037195888536516091

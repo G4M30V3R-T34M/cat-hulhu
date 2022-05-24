@@ -8,4 +8,6 @@ public class GameDataScriptable : ScriptableObject
     public int lives;
 
     public List<string> clues;
+
+    public List<string> keys;
 }

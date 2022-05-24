@@ -119,10 +119,10 @@ TextureImporter:
       name: floor
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 600
-        height: 600
+        x: 3
+        y: 1
+        width: 595
+        height: 596
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,6 +241,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Key
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 30
+        width: 72
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2e03fc32c76a8a45a7fc531ec0dc126
+      internalID: -672442004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -257,6 +278,7 @@ TextureImporter:
       wall: -1133132006
       ClueDetail: 622031698
       Wall_Corner: -968099063
+      Key: -672442004
       floor: 2145130893
   spritePackingTag: 
   pSDRemoveMatte: 0
