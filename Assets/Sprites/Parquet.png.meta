@@ -199,6 +199,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ClueBase
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 96
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec87a1eac1a6b74ab0b5fa757089ee8
+      internalID: 1462012287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ClueDetail
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 111
+        width: 26
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5000023, y: 0.11524472}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f0b3784f21e23f4ab5cd41ff6b3bdbd
+      internalID: 622031698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -211,7 +253,9 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       trap: -1662560172
+      ClueBase: 1462012287
       wall: -1133132006
+      ClueDetail: 622031698
       Wall_Corner: -968099063
       floor: 2145130893
   spritePackingTag: 
