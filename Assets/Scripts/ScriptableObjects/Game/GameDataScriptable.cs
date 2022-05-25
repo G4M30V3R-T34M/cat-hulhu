@@ -10,4 +10,6 @@ public class GameDataScriptable : ScriptableObject
     public List<string> clues;
 
     public List<string> keys;
+
+    public List<TrapScriptable> traps;
 }
