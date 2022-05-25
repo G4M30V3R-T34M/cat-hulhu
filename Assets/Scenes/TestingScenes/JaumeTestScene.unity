@@ -1378,6 +1378,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1256370746 stripped
+CircleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6219404941909131068, guid: c9d839dea320303489b69430c79dc9ff, type: 3}
+  m_PrefabInstance: {fileID: 6219404942100065235}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1283184338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2060,6 +2065,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6219404941909131067, guid: c9d839dea320303489b69430c79dc9ff, type: 3}
+      propertyPath: endReachedDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6219404941909131067, guid: c9d839dea320303489b69430c79dc9ff, type: 3}
+      propertyPath: constrainInsideGraph
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6219404941909131067, guid: c9d839dea320303489b69430c79dc9ff, type: 3}
+      propertyPath: slowWhenNotFacingTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6219404941909131069, guid: c9d839dea320303489b69430c79dc9ff, type: 3}
+      propertyPath: enemySettings
+      value: 
+      objectReference: {fileID: 11400000, guid: 3c5dfa67104ce564eb3a3fec83fb3959, type: 2}
+    - target: {fileID: 6219404941909131069, guid: c9d839dea320303489b69430c79dc9ff, type: 3}
+      propertyPath: detectionCollider
+      value: 
+      objectReference: {fileID: 1256370746}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9d839dea320303489b69430c79dc9ff, type: 3}
 --- !u!1001 &8278902581462498784
