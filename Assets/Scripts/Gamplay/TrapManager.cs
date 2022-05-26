@@ -20,16 +20,16 @@ public class TrapManager : Singleton<TrapManager>
         return trap;
     }
 
-    public void SaveTrap(TrapScriptable newTrap) {
+    public void SaveTrap(string id, Color backColor, Color headColor, Color eyesColor) {
         bool found = false;
 
         int i = 0;
         while (i < gameData.traps.Count && !found) {
             if (gameData.traps[i].id == "") {
-                gameData.traps[i].id = newTrap.id;
-                gameData.traps[i].backColor = newTrap.backColor;
-                gameData.traps[i].headColor = newTrap.headColor;
-                gameData.traps[i].eyesColor = newTrap.eyesColor;
+                gameData.traps[i].id = id;
+                gameData.traps[i].backColor = backColor;
+                gameData.traps[i].headColor = headColor;
+                gameData.traps[i].eyesColor = eyesColor;
                 found = true;
             }
             i++;

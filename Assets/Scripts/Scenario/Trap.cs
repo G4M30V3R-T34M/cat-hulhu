@@ -22,7 +22,9 @@ public class Trap : MonoBehaviour
         }
 
         trapCollider = GetComponent<Collider2D>();
+    }
 
+    private void Start() {
         LoadTrapData();
     }
 
@@ -44,14 +46,7 @@ public class Trap : MonoBehaviour
         if (collision.gameObject.layer == (int)Layers.Player) {
             PlayerColor playerColor = collision.gameObject.GetComponent<PlayerColor>();
             Color[] colors = playerColor.GetColors();
-
-            TrapScriptable trapData = new TrapScriptable();
-            trapData.id = id;
-            trapData.backColor = colors[0];
-            trapData.headColor = colors[1];
-            trapData.eyesColor = colors[2];
-
-            TrapManager.Instance.SaveTrap(trapData);
+            TrapManager.Instance.SaveTrap(id, colors[0], colors[1], colors[2]);
 
             // TODO: KILL PLAYER
             SceneManager.LoadScene((int)Scenes.TutorialLevel);
