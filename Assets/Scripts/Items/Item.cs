@@ -11,10 +11,14 @@ public abstract class Item : MonoBehaviour
     protected SpriteRenderer itemSprite;
     protected Collider2D collider;
 
-    protected void Awake() {
+    public bool basicItem = true;
+
+    protected virtual void Awake() {
         itemSprite = GetComponent<SpriteRenderer>();
         collider = GetComponent<Collider2D>();
     }
+    
+    protected virtual void Start() { }
 
     public bool IsWeapon() {
         return itemSettings.isWeapon;
@@ -27,8 +31,10 @@ public abstract class Item : MonoBehaviour
     }
 
     public void Pick() {
-        itemSprite.enabled = false;
-        collider.enabled = false;
+        if (basicItem) {
+            itemSprite.enabled = false;
+            collider.enabled = false;
+        }
 
         ActionOnPick();
     }

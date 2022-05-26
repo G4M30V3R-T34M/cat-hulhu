@@ -19,4 +19,12 @@ public class PlayerColor : MonoBehaviour
         head.color = playerSettings.color2;
         eyes.color = playerSettings.color3;
     }
+
+    public Color[] GetColors() {
+        return new Color[] {
+            back.color,
+            head.color,
+            eyes.color
+        };
+    }
 }
