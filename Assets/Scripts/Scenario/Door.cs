@@ -23,6 +23,7 @@ public class Door : Item
             gameObject.SetActive(false);
             // TODO: door open sound
         } else {
+            PlayerDialog.Instance.ShowText("The door is closed, I need a key");
             Debug.Log("Can't Open");
             // TODO: Error sound
         }
