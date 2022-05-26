@@ -36,7 +36,6 @@ public class EnemyController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        print("foo");
         if (collision.gameObject.layer == (int)Layers.Player) {
             destinationSetter.target = collision.gameObject.transform;
         }
@@ -60,19 +59,16 @@ public class EnemyController : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public IEnumerator Attack() {
-        print("Attack");
+    public void Attack() {
         isAttacking = true;
         detectionCollider.enabled = false;
         destinationSetter.target = null;
-        
-        yield return new WaitForSeconds(5);
-        destinationSetter.target = startPosition.transform;
-        detectionCollider.enabled = true;
+        //TODO play animation
     }
 
     public void FinishAttack() {
         isAttacking = false;
+        destinationSetter.target = startPosition.transform;
         detectionCollider.enabled = true;
     }
 

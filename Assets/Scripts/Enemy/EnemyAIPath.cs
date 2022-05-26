@@ -16,7 +16,7 @@ public class EnemyAIPath : AIPath
     public override void OnTargetReached() {
         base.OnTargetReached();
         if (enemyController.TargetIsPlayer()) {
-            StartCoroutine(enemyController.Attack());
+            enemyController.Attack();
         }
     }
 }
