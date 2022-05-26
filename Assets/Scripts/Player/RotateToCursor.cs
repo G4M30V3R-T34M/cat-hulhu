@@ -2,16 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class RotateToCursor : MonoBehaviour
 {
     Camera mainCamera;
-    Rigidbody2D playerRB;
     
     void Start()
     {
         mainCamera = Camera.main;
-        playerRB = this.GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -22,7 +19,7 @@ public class RotateToCursor : MonoBehaviour
     private void Rotate()
     {
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(GetMousePosition());
-        playerRB.transform.eulerAngles = new Vector3(0, 0, TanAngleDeg(mousePosition));
+        transform.eulerAngles = new Vector3(0, 0, TanAngleDeg(mousePosition));
     }
 
     private Vector3 GetMousePosition()

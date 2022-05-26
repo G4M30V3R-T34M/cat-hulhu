@@ -41,6 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Floor&Walls
+    uniqueID: 1310571551
+    locked: 0
+  - name: Elements
+    uniqueID: 4038751893
+    locked: 0
+  - name: Canvas&Info
+    uniqueID: 2467986755
+    locked: 0
   - name: Player
     uniqueID: 3467590111
     locked: 0

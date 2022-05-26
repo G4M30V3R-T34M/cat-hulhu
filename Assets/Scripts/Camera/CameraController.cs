@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour
     {
         Vector3 mousePosition = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y));
         Vector3 direction = mousePosition - this.transform.position;
-        if (player.GetComponent<SpriteRenderer>().isVisible == true)
+        if (player.GetComponentInChildren<SpriteRenderer>().isVisible == true)
         {
             transform.Translate(direction * cameraSettings.speed * Time.deltaTime);
         }
