@@ -21,6 +21,6 @@ public class EnemyMovement : MonoBehaviour
     void faceEnemy() {
         direction = aIPath.desiredVelocity;
 
-        transform.right = direction;
+        transform.up = -direction;
     }
 }
