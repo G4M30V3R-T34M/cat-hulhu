@@ -11,11 +11,12 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private EnemyScriptable enemySettings;
     [SerializeField] private CircleCollider2D detectionCollider;
 
-    AIDestinationSetter destinationSetter;
+    public AIDestinationSetter destinationSetter;
     HealthManager health;
 
     GameObject startPosition;
-    private bool isAttacking;
+
+    bool isAttacking;
 
     private void Awake() {
         destinationSetter = gameObject.GetComponent<AIDestinationSetter>();
@@ -32,24 +33,24 @@ public class EnemyController : MonoBehaviour
         startPosition.transform.position = this.gameObject.transform.position;
         startPosition.transform.localScale = this.gameObject.transform.localScale;
         startPosition.transform.rotation = this.gameObject.transform.rotation;
-
-        isAttacking = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.tag == "Player") {
+        print("foo");
+        if (collision.gameObject.layer == (int)Layers.Player) {
             destinationSetter.target = collision.gameObject.transform;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
-        if (collision.gameObject.tag == "Player") {
+        if (isAttacking) { return; }
+        if (collision.gameObject.layer == (int)Layers.Player) {
             destinationSetter.target = startPosition.transform;
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision) {
-        if (collision.gameObject.tag == "Player") {
+        if (collision.gameObject.layer == (int)Layers.Player) {
             destinationSetter.target = collision.gameObject.transform;
         }
     }
@@ -57,5 +58,25 @@ public class EnemyController : MonoBehaviour
     private void Die() {
         health.NoHealth -= Die;
         gameObject.SetActive(false);
+    }
+
+    public IEnumerator Attack() {
+        print("Attack");
+        isAttacking = true;
+        detectionCollider.enabled = false;
+        destinationSetter.target = null;
+        
+        yield return new WaitForSeconds(5);
+        destinationSetter.target = startPosition.transform;
+        detectionCollider.enabled = true;
+    }
+
+    public void FinishAttack() {
+        isAttacking = false;
+        detectionCollider.enabled = true;
+    }
+
+    public bool TargetIsPlayer() {
+        return destinationSetter.target != null && destinationSetter.target.gameObject.layer == (int)Layers.Player;
     }
 }
