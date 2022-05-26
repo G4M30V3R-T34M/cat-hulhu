@@ -5,7 +5,7 @@ using Pathfinding;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public AIPath aIPath;
+    public EnemyAIPath aIPath;
 
     Vector2 direction;
     // Start is called before the first frame update
