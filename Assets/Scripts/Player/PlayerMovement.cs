@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private PlayerSettingsScriptable playerSettings;
+    [SerializeField] Transform spriteTransform;
 
     Animator animator;
 
@@ -34,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetFloat("sideMovement", 0);
         } else {
             float theta = Mathf.Atan2(sideMovement, frontMovement) * Mathf.Rad2Deg;
-            theta += transform.rotation.eulerAngles.z;
+            theta += spriteTransform.rotation.eulerAngles.z;
 
             animator.SetFloat("frontMovement", Mathf.Sin(theta * Mathf.Deg2Rad));
             animator.SetFloat("sideMovement", -1 * Mathf.Cos(theta * Mathf.Deg2Rad));
