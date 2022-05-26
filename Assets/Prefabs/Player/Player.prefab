@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSettings: {fileID: 11400000, guid: 273bdfe4022c7be49bb6f7b0d80ae964, type: 2}
+  spriteTransform: {fileID: 8487146118450646336}
 --- !u!114 &7969834321002741029
 MonoBehaviour:
   m_ObjectHideFlags: 0
