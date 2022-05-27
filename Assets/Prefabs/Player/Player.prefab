@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 697314100496139552}
   - component: {fileID: 7969834321002741029}
   - component: {fileID: 1371840325889413333}
+  - component: {fileID: 8880228371669419738}
   - component: {fileID: 6101480898204723574}
   - component: {fileID: 153185175695049677}
   - component: {fileID: 3401193483393313961}
@@ -142,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfee435b4ae77b54fa676077f5f917eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSettings: {fileID: 11400000, guid: 273bdfe4022c7be49bb6f7b0d80ae964, type: 2}
   weapon: {fileID: 0}
   itemToPick: {fileID: 0}
   pickableItem: 0
@@ -161,6 +163,18 @@ MonoBehaviour:
   back: {fileID: 3972805219922746954}
   head: {fileID: 1130140414084978896}
   eyes: {fileID: 4730560309486514321}
+--- !u!114 &8880228371669419738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 697314100496139553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 900e5c67177e29441b772e9cdc3887db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &6101480898204723574
 Animator:
   serializedVersion: 4
