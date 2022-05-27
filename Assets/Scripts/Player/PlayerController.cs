@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     private void PickItem() {
         Item item = itemToPick.GetComponent<Item>();
-        item.Pick();
+        item.Pick(this.gameObject);
         pickableItem = false;
         if (item.IsWeapon()) {
             if (weapon != null) {

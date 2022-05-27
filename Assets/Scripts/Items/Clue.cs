@@ -23,7 +23,7 @@ public class Clue : Item
         throw new System.NotImplementedException();
     }
 
-    protected override void ActionOnPick() {
+    protected override void ActionOnPick(GameObject character) {
         CluesManager.Instance.CollectClue(id);
         gameObject.SetActive(false);
 

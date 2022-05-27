@@ -14,21 +14,13 @@ public class DeadBodyRandomColors : MonoBehaviour
 
 
     private void Awake() {
-        back.color = RandomColors();
-        head.color = RandomColors();
-        eyes.color = RandomColors();
+        back.color = RandomColor.Generate();
+        head.color = RandomColor.Generate();
+        eyes.color = RandomColor.Generate();
 
         if (Random.Range(0f, 1f) <= ratio ) {
             GreenBlood();
         }
-    }
-
-    private Color RandomColors() {
-        return new Color(
-            Random.Range(0f, 1f),
-            Random.Range(0f, 1f),
-            Random.Range(0f, 1f)
-        );
     }
 
     private void GreenBlood() {

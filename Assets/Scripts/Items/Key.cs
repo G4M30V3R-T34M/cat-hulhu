@@ -23,7 +23,7 @@ public class Key : Item
         throw new System.NotImplementedException();
     }
 
-    protected override void ActionOnPick() {
+    protected override void ActionOnPick(GameObject character) {
         KeyManager.Instance.CollectKey(id);
         gameObject.SetActive(false);
     }
