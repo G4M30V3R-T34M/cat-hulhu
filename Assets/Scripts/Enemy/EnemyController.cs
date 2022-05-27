@@ -15,8 +15,10 @@ public class EnemyController : MonoBehaviour
     HealthManager health;
 
     GameObject startPosition;
+    Animator animator;
 
     bool isAttacking;
+    Quaternion RotationToEnemy;
 
     private void Awake() {
         destinationSetter = gameObject.GetComponent<AIDestinationSetter>();
@@ -25,6 +27,7 @@ public class EnemyController : MonoBehaviour
         health.NoHealth += Die;
         detectionCollider.radius = enemySettings.detectionRadius;
         GetComponent<AIPath>().maxSpeed = enemySettings.speed;
+        animator = GetComponent<Animator>();
     }
 
     private void Start() {
@@ -36,7 +39,6 @@ public class EnemyController : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        print("foo");
         if (collision.gameObject.layer == (int)Layers.Player) {
             destinationSetter.target = collision.gameObject.transform;
         }
@@ -60,19 +62,25 @@ public class EnemyController : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public IEnumerator Attack() {
-        print("Attack");
+    public void Attack() {
         isAttacking = true;
         detectionCollider.enabled = false;
+        RotationToEnemy = gameObject.transform.rotation;
         destinationSetter.target = null;
-        
-        yield return new WaitForSeconds(5);
-        destinationSetter.target = startPosition.transform;
-        detectionCollider.enabled = true;
+
+        animator.SetBool("isAttacking", true);
+        gameObject.transform.rotation = RotationToEnemy;
     }
 
     public void FinishAttack() {
         isAttacking = false;
+        animator.SetBool("isAttacking", false);
+        StartCoroutine(FinishAttackCoroutine());
+    }
+
+    public IEnumerator FinishAttackCoroutine() {
+        yield return new WaitForSeconds(0.7f);
+        destinationSetter.target = startPosition.transform;
         detectionCollider.enabled = true;
     }
 

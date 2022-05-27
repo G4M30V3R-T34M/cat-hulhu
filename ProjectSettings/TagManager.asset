@@ -37,7 +37,6 @@ TagManager:
   - 
   - 
   - 
-  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
@@ -50,6 +49,9 @@ TagManager:
     locked: 0
   - name: Canvas&Info
     uniqueID: 2467986755
+    locked: 0
+  - name: Enemies
+    uniqueID: 1169321835
     locked: 0
   - name: Player
     uniqueID: 3467590111
