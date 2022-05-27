@@ -17,14 +17,12 @@ public class Door : Item
         throw new System.NotImplementedException();
     }
 
-    protected override void ActionOnPick() {
+    protected override void ActionOnPick(GameObject character) {
         if (id == "" || KeyManager.Instance.IsKeyCollected(id)) {
-            Debug.Log("Open");
             gameObject.SetActive(false);
             // TODO: door open sound
         } else {
             PlayerDialog.Instance.ShowText("The door is closed, I need a key");
-            Debug.Log("Can't Open");
             // TODO: Error sound
         }
     }
