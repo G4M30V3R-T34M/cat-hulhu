@@ -16,11 +16,6 @@ public class EnemyAIPath : AIPath
     public override void OnTargetReached() {
         base.OnTargetReached();
         if (enemyController.TargetIsPlayer()) {
-            //base.destination
-            //base.SetPath(null);
-            //base.ClearPath();
-            //base.CancelCurrentPathRequest();
-            //base.path = null;
             enemyController.Attack();
         }
     }
