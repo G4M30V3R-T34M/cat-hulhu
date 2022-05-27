@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour
     }
 
     private void PickItem() {
-        Debug.Log("Here");
         Item item = itemToPick.GetComponent<Item>();
         item.Pick(this.gameObject);
         pickableItem = false;

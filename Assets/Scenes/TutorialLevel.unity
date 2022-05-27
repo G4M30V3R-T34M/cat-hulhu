@@ -1252,7 +1252,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3652213597836457347, guid: c5207963ca75ffa41b781880ad676da4, type: 3}
       propertyPath: id
-      value: 
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3652213597836457347, guid: c5207963ca75ffa41b781880ad676da4, type: 3}
+      propertyPath: returnToBigMap
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4847628761465522560, guid: c5207963ca75ffa41b781880ad676da4, type: 3}
       propertyPath: m_IsActive
