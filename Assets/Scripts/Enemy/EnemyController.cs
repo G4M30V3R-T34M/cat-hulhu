@@ -11,10 +11,12 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private EnemyScriptable enemySettings;
     [SerializeField] private CircleCollider2D detectionCollider;
 
-    public AIDestinationSetter destinationSetter;
+
+    private AIDestinationSetter destinationSetter;
     HealthManager health;
 
     GameObject startPosition;
+    Animator animator;
 
     bool isAttacking;
 
@@ -25,6 +27,7 @@ public class EnemyController : MonoBehaviour
         health.NoHealth += Die;
         detectionCollider.radius = enemySettings.detectionRadius;
         GetComponent<AIPath>().maxSpeed = enemySettings.speed;
+        animator = GetComponent<Animator>();
     }
 
     private void Start() {
@@ -63,11 +66,17 @@ public class EnemyController : MonoBehaviour
         isAttacking = true;
         detectionCollider.enabled = false;
         destinationSetter.target = null;
-        //TODO play animation
+        animator.SetBool("isAttacking", true);
     }
 
     public void FinishAttack() {
         isAttacking = false;
+        animator.SetBool("isAttacking", false);
+        StartCoroutine(FinishAttackCoroutine());
+    }
+
+    public IEnumerator FinishAttackCoroutine() {
+        yield return new WaitForSeconds(0.7f);
         destinationSetter.target = startPosition.transform;
         detectionCollider.enabled = true;
     }

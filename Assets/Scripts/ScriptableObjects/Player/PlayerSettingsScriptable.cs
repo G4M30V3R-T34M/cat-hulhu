@@ -12,4 +12,6 @@ public class PlayerSettingsScriptable : ScriptableObject
 
     public Color color1, color2, color3;
 
+    [Range(1, 5)]
+    public int health;
 }

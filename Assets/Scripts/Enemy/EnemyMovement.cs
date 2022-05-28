@@ -19,8 +19,9 @@ public class EnemyMovement : MonoBehaviour
     }
 
     void faceEnemy() {
-        direction = aIPath.desiredVelocity;
-
-        transform.right = direction;
+        if(aIPath.destination.x != Mathf.Infinity) {
+            direction = aIPath.desiredVelocity == new Vector3(0, 0, 0) ? transform.position - aIPath.destination : -aIPath.desiredVelocity;
+            transform.up = direction;
+        }
     }
 }

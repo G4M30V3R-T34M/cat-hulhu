@@ -4,9 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private PlayerSettingsScriptable playerSettings;
+
     public Item weapon;
     public GameObject itemToPick;
+    private HealthManager health;
     public bool pickableItem;
+
+    private void Awake() {
+        health = GetComponent<HealthManager>();
+        health.SetUp(playerSettings.health);
+        health.NoHealth += Die;
+    }
 
     private void Update() {
         if (CanPickUp() && IsTryingToPick()) {
@@ -65,5 +74,15 @@ public class PlayerController : MonoBehaviour
             itemToPick = null;
             pickableItem = false;
         }
+    }
+
+    private void Die() {
+        gameObject.SetActive(false);
+        // TODO implement death and respawn
+    }
+
+    public void TakeDamage(int damage) {
+        health.TakeDamage(damage);
+        // TODO play sound
     }
 }
