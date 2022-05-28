@@ -11,10 +11,6 @@ public class Ritual : Item
     [SerializeField]
     int mediumClues, hardClues;
 
-    public override void Attack() {
-        throw new System.NotImplementedException();
-    }
-
     protected override void ActionOnPick(GameObject character) {
         int cluesRecovered = CluesManager.Instance.GetCurrentClues();
 
