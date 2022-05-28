@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private EnemyScriptable enemySettings;
     [SerializeField] private CircleCollider2D detectionCollider;
 
-    public AIDestinationSetter destinationSetter;
+    private AIDestinationSetter destinationSetter;
     HealthManager health;
 
     GameObject startPosition;
