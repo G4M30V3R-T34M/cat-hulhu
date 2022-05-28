@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 3622913283634509336}
   - component: {fileID: 1004299593096733242}
   m_Layer: 0
-  m_Name: Trap
+  m_Name: trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -490,7 +490,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009783506, y: 0.020396471}
+  m_Offset: {x: -0.009783506, y: -0.011691093}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -501,7 +501,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.5895607, y: 0.362885}
+  m_Size: {x: 1.5895607, y: 0.569664}
   m_EdgeRadius: 0
 --- !u!1 &6124723793542733330
 GameObject:
