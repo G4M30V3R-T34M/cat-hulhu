@@ -19,9 +19,6 @@ public class EnemyController : MonoBehaviour
     Animator animator;
 
     bool isAttacking;
-    Quaternion RotationToEnemy;
-
-    bool isAttacking;
 
     private void Awake() {
         destinationSetter = gameObject.GetComponent<AIDestinationSetter>();
