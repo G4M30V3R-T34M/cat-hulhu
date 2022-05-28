@@ -65,11 +65,9 @@ public class EnemyController : MonoBehaviour
     public void Attack() {
         isAttacking = true;
         detectionCollider.enabled = false;
-        RotationToEnemy = gameObject.transform.rotation;
         destinationSetter.target = null;
 
         animator.SetBool("isAttacking", true);
-        gameObject.transform.rotation = RotationToEnemy;
     }
 
     public void FinishAttack() {
