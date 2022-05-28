@@ -11,10 +11,17 @@ public class PlayerController : MonoBehaviour
     private HealthManager health;
     public bool pickableItem;
 
+    Animator animator;
+
     private void Awake() {
+        animator = GetComponent<Animator>();
         health = GetComponent<HealthManager>();
         health.SetUp(playerSettings.health);
         health.NoHealth += Die;
+    }
+
+    private void Start() {
+        weapon.enabled = true;
     }
 
     private void Update() {
@@ -55,7 +62,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void AttackWithWeapon() {
-        weapon.Attack();
+        print("ataca");
+        animator.SetTrigger("attack");
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {

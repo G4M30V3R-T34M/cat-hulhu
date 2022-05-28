@@ -19,10 +19,6 @@ public class Key : Item
         }
     }
 
-    public override void Attack() {
-        throw new System.NotImplementedException();
-    }
-
     protected override void ActionOnPick(GameObject character) {
         KeyManager.Instance.CollectKey(id);
         gameObject.SetActive(false);

@@ -18,10 +18,6 @@ public class Door : Item
         }
     }
 
-    public override void Attack() {
-        throw new System.NotImplementedException();
-    }
-
     protected override void ActionOnPick(GameObject character) {
         if (id == "0" || KeyManager.Instance.IsKeyCollected(id)) {
             PerformAction();

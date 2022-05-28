@@ -7,7 +7,7 @@ public class ItemScriptableObject : ScriptableObject
 {
     public bool isWeapon;
 
-    public float damage;
+    public int damage;
 
     public string description;
 }

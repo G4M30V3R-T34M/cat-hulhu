@@ -1390,7 +1390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8154120089137610270, guid: f3e53adf1a296674e85956579629d501, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8487146118450646336, guid: f3e53adf1a296674e85956579629d501, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1745,6 +1745,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3748994057793542061, guid: c9d839dea320303489b69430c79dc9ff, type: 3}
+      propertyPath: itemSettings
+      value: 
+      objectReference: {fileID: 11400000, guid: 89453c9b99d28584f996e734134904df, type: 2}
     - target: {fileID: 4534035043593216431, guid: c9d839dea320303489b69430c79dc9ff, type: 3}
       propertyPath: endReachedDistance
       value: 1.03
@@ -1831,7 +1835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8823772222964796615, guid: c9d839dea320303489b69430c79dc9ff, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9082270358292960447, guid: c9d839dea320303489b69430c79dc9ff, type: 3}
       propertyPath: m_Layer
