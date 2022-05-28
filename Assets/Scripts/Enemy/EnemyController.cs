@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private EnemyScriptable enemySettings;
     [SerializeField] private CircleCollider2D detectionCollider;
 
+
     private AIDestinationSetter destinationSetter;
     HealthManager health;
 
@@ -19,6 +20,8 @@ public class EnemyController : MonoBehaviour
 
     bool isAttacking;
     Quaternion RotationToEnemy;
+
+    bool isAttacking;
 
     private void Awake() {
         destinationSetter = gameObject.GetComponent<AIDestinationSetter>();
@@ -66,7 +69,6 @@ public class EnemyController : MonoBehaviour
         isAttacking = true;
         detectionCollider.enabled = false;
         destinationSetter.target = null;
-
         animator.SetBool("isAttacking", true);
     }
 

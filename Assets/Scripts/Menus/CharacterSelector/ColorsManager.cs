@@ -41,20 +41,12 @@ public class ColorsManager : MonoBehaviour
     }
 
     private void GenerateColor(Slider[] sliders, Image image) {
-        Color color = RandomColor();
+        Color color = RandomColor.Generate();
 
         sliders[0].value = color.r;
         sliders[1].value = color.g;
         sliders[2].value = color.b;
 
         image.color = color;
-    }
-
-    private Color RandomColor() {
-        return new Color(
-            Random.Range(0f, 1f),
-            Random.Range(0f, 1f),
-            Random.Range(0f, 1f)
-            );
     }
 }

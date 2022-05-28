@@ -30,13 +30,13 @@ public abstract class Item : MonoBehaviour
         collider.enabled = true;
     }
 
-    public void Pick() {
+    public void Pick(GameObject character) {
         if (basicItem) {
             itemSprite.enabled = false;
             collider.enabled = false;
         }
 
-        ActionOnPick();
+        ActionOnPick(character);
     }
 
     /*
@@ -45,7 +45,7 @@ public abstract class Item : MonoBehaviour
     /// <summary>
     /// Abstract function for the item actions when is picked
     /// </summary>
-    protected abstract void ActionOnPick();
+    protected abstract void ActionOnPick(GameObject character);
 
     /// <summary>
     /// Abstract function for the item when user attack

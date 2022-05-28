@@ -9,5 +9,5 @@ public class MeleeWeapon : Item
         Debug.Log("Attacking");
     }
 
-    protected override void ActionOnPick() {}
+    protected override void ActionOnPick(GameObject chracter) {}
 }
