@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: WeaponScriptable
   m_EditorClassIdentifier: 
   isWeapon: 1
-  damage: 5
-  description: 
+  damage: 1
+  description: It's just a sword

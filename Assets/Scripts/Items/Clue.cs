@@ -19,10 +19,6 @@ public class Clue : Item
         }
     }
 
-    public override void Attack() {
-        throw new System.NotImplementedException();
-    }
-
     protected override void ActionOnPick(GameObject character) {
         CluesManager.Instance.CollectClue(id);
         gameObject.SetActive(false);
