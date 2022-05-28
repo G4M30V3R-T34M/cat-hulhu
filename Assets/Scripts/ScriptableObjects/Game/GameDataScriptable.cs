@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName =" GameDataScriptable", menuName = "Scriptables/GameDataScriptable", order = 3)]
 public class GameDataScriptable : ScriptableObject
 {
+    public Difficulty difficulty;
+
     public int lives;
 
     public List<string> clues;

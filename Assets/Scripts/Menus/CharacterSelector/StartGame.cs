@@ -34,6 +34,7 @@ public class StartGame : MonoBehaviour
         player.color3 = Eyes.color;
 
         game.lives = difficultyManager.GetDifficultyInvestigators();
+        game.difficulty = difficultyManager.difficulty;
 
         changeScene.LoadGameIntro();
     }

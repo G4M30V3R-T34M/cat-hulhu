@@ -262,6 +262,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Ritual
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 319
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8d187536836aa247a97967508f7b145
+      internalID: 1561044471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -274,6 +295,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       trap: -1662560172
+      Ritual: 1561044471
       ClueBase: 1462012287
       wall: -1133132006
       ClueDetail: 622031698
