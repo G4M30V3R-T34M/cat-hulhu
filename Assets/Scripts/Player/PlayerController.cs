@@ -20,10 +20,6 @@ public class PlayerController : MonoBehaviour
         health.NoHealth += Die;
     }
 
-    private void Start() {
-        weapon.enabled = true;
-    }
-
     private void Update() {
         if (CanPickUp() && IsTryingToPick()) {
             PickItem();
