@@ -21,7 +21,7 @@ public class Ritual : Item
         if (EnoughCluesRecovered(cluesRecovered)) {
             SceneManager.LoadScene((int)Scenes.GameClear);
         } else {
-            PlayerDialog.Instance.ShowText("I need to find more clues to stop the ritual");
+            PlayerDialog.Instance.ShowText(itemSettings.description);
         }
     }
 
