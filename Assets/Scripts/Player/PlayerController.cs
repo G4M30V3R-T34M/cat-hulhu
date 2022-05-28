@@ -62,7 +62,6 @@ public class PlayerController : MonoBehaviour
     }
 
     private void AttackWithWeapon() {
-        print("ataca");
         animator.SetTrigger("attack");
     }
 

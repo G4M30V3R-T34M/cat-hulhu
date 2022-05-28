@@ -13,9 +13,11 @@ public class Weapon : Item
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (MustIgnore(collision)) { return; };
-        print(collision.gameObject.layer);
+
         if(collision.gameObject.layer == (int)Layers.Player) {
             collision.GetComponent<PlayerController>().TakeDamage(itemSettings.damage);
+        } else if (collision.gameObject.layer == (int)Layers.Enemy) {
+            collision.GetComponent<EnemyController>().TakeDamage(itemSettings.damage);
         }
     }
 

@@ -57,11 +57,6 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void Die() {
-        health.NoHealth -= Die;
-        gameObject.SetActive(false);
-    }
-
     public void Attack() {
         isAttacking = true;
         detectionCollider.enabled = false;
@@ -84,4 +79,16 @@ public class EnemyController : MonoBehaviour
     public bool TargetIsPlayer() {
         return destinationSetter.target != null && destinationSetter.target.gameObject.layer == (int)Layers.Player;
     }
+
+    // Health manager function
+    public void TakeDamage(int damage) {
+        health.TakeDamage(damage);
+        // TODO play sound
+    }
+    private void Die() {
+        health.NoHealth -= Die;
+        gameObject.SetActive(false);
+        // TODO play sound
+    }
+
 }
