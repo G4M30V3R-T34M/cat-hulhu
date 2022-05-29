@@ -6,6 +6,7 @@ using Feto;
 [RequireComponent(typeof(CluesData))]
 [RequireComponent(typeof(TrapData))]
 [RequireComponent(typeof(KeysData))]
+[RequireComponent(typeof(HouseData))]
 public class SaveDataManager : SingletonPersistent<SaveDataManager>
 {
     public PlayerData playerData;
@@ -13,6 +14,7 @@ public class SaveDataManager : SingletonPersistent<SaveDataManager>
     public CluesData cluesData;
     public TrapData trapData;
     public KeysData keysData;
+    public HouseData houseData;
 
     protected override void Awake() {
         base.Awake();
@@ -21,6 +23,7 @@ public class SaveDataManager : SingletonPersistent<SaveDataManager>
         cluesData = GetComponent<CluesData>();
         trapData = GetComponent<TrapData>();
         keysData = GetComponent<KeysData>();
+        houseData = GetComponent<HouseData>();
     }
 
 }
