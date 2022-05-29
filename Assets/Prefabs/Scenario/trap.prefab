@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9017170094178321169}
   - component: {fileID: 6892541220830278778}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BloodDrops (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6926634576178028719}
   - component: {fileID: 5328921712500143395}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TrapSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4534470468083098748}
   - component: {fileID: 3776335629830977824}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6752929174885189782}
   - component: {fileID: 5299510129021234602}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Blood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4577497443187669328}
   - component: {fileID: 520917480962471305}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,7 +371,7 @@ Transform:
   - {fileID: 441374346867361545}
   - {fileID: 6752929174885189782}
   m_Father: {fileID: 5773715808982548608}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &520917480962471305
 SpriteRenderer:
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 5773715808982548608}
   - component: {fileID: 3622913283634509336}
   - component: {fileID: 1004299593096733242}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: trap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,6 +456,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6926634576178028719}
+  - {fileID: 8760414406848239571}
   - {fileID: 4577497443187669328}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -513,7 +514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8979464455074012096}
   - component: {fileID: 7978358973222780910}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BloodDrops
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -597,7 +598,7 @@ GameObject:
   m_Component:
   - component: {fileID: 441374346867361545}
   - component: {fileID: 8806809772309751029}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 782936036112297885}
   - component: {fileID: 2860195220766688690}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BloodDrops (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -756,3 +757,65 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &670183000385843917
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5773715808982548608}
+    m_Modifications:
+    - target: {fileID: 8133441134071883038, guid: 4e5d582056365af4bab3a15aa9319588, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133441134071883038, guid: 4e5d582056365af4bab3a15aa9319588, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133441134071883038, guid: 4e5d582056365af4bab3a15aa9319588, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133441134071883038, guid: 4e5d582056365af4bab3a15aa9319588, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133441134071883038, guid: 4e5d582056365af4bab3a15aa9319588, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133441134071883038, guid: 4e5d582056365af4bab3a15aa9319588, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133441134071883038, guid: 4e5d582056365af4bab3a15aa9319588, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133441134071883038, guid: 4e5d582056365af4bab3a15aa9319588, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133441134071883038, guid: 4e5d582056365af4bab3a15aa9319588, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133441134071883038, guid: 4e5d582056365af4bab3a15aa9319588, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133441134071883038, guid: 4e5d582056365af4bab3a15aa9319588, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874319637206358344, guid: 4e5d582056365af4bab3a15aa9319588, type: 3}
+      propertyPath: m_Name
+      value: Obstacle
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4e5d582056365af4bab3a15aa9319588, type: 3}
+--- !u!4 &8760414406848239571 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8133441134071883038, guid: 4e5d582056365af4bab3a15aa9319588, type: 3}
+  m_PrefabInstance: {fileID: 670183000385843917}
+  m_PrefabAsset: {fileID: 0}
