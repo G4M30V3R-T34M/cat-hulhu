@@ -8,6 +8,7 @@ using Pathfinding;
 [RequireComponent(typeof(HealthManager))]
 public class EnemyController : MonoBehaviour
 {
+    [SerializeField] string id;
     [SerializeField] private EnemyScriptable enemySettings;
     [SerializeField] private CircleCollider2D detectionCollider;
     Collider2D enemyCollider;
