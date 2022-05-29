@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Spawner : MonoBehaviour
+public class Spawner
 {
-    [SerializeField]
-    PlayerSettingsScriptable playerSettings;
+    static float BIGMAPX = 0;
+    static float BIGMAPY = -11;
 
-    string[] names = new string[] {
+     static string[] names = new string[] {
         "Agatha Crane",
         "Agnes Baker",
         "Akachi Onyele",
@@ -27,56 +27,57 @@ public class Spawner : MonoBehaviour
         "Father Mateo"
     };
 
-    int nameIndex = 0;
+    static int nameIndex = 0;
 
-    public void RespawnPlayer() {
+    public static void RespawnPlayer() {
         DecrementTotalLives();
         SetNewRandomColors();
         SetNewName();
         SpawnPlayer();
     }
 
-    private void DecrementTotalLives() {
+    private static void DecrementTotalLives() {
         if (PlayerHasLivesLeft()) {
-            // TODO Decrement in new Save system
+            SaveDataManager.Instance.gameData.lives -= 1;
         }
         else {
             SceneManager.LoadScene((int)Scenes.GameOver);
         }
     }
 
-    private bool PlayerHasLivesLeft() {
-        // TODO get this lives from new Save system
-        int lives = 15;
-        return lives == 0;
+    private static bool PlayerHasLivesLeft() {
+        return SaveDataManager.Instance.gameData.lives == 0;
     }
 
-    private void SetNewRandomColors() {
-        playerSettings.color1 = RandomColor.Generate();
-        playerSettings.color2 = RandomColor.Generate();
-        playerSettings.color3 = RandomColor.Generate();
+    private static void SetNewRandomColors() {
+        SaveDataManager.Instance.playerData.backColor = RandomColor.Generate();
+        SaveDataManager.Instance.playerData.headColor = RandomColor.Generate();
+        SaveDataManager.Instance.playerData.eyesColor = RandomColor.Generate();
     }
 
-    private void SetNewName() {
-        playerSettings.investigatorName = GetNextName();
+    private static void SetNewName() {
+        SaveDataManager.Instance.playerData.investigatorName = GetNextName();
     }
 
-    private string GetNextName() {
-        string newNAme = names[nameIndex];
+    private static string GetNextName() {
+        string newName = names[nameIndex];
         nameIndex += 1;
-        return newNAme;
+        return newName;
     }
 
-    private void SpawnPlayer() {
+    private static void SpawnPlayer() {
         if (!PlayerFinishedTutorial()) {
             SceneManager.LoadScene((int)Scenes.TutorialLevel);
         }
-        SceneManager.LoadScene((int)Scenes.BigMap);
+        else {
+            SaveDataManager.Instance.playerData.lastBigMapPosition.x = BIGMAPX;
+            SaveDataManager.Instance.playerData.lastBigMapPosition.y = BIGMAPY;
+            SceneManager.LoadScene((int)Scenes.BigMap);
+        }
     }
 
-    private bool PlayerFinishedTutorial() {
-        // TODO get this value from save system
-        return true;
+    private static bool PlayerFinishedTutorial() {
+        return SaveDataManager.Instance.keysData.IsKeyCollected("tut-03");
     }
 
 

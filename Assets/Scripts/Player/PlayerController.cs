@@ -97,11 +97,19 @@ public class PlayerController : MonoBehaviour
 
     private void Die() {
         gameObject.SetActive(false);
-        // TODO implement death and respawn
+        // TODO leave the corpse
+        Spawner.RespawnPlayer();
     }
 
     public void TakeDamage(int damage) {
         health.TakeDamage(damage);
         // TODO play sound
+    }
+
+    public void DeathByTrap() {
+        health.NoHealth -= Die;
+        health.TakeDamage(playerSettings.health);
+
+        Spawner.RespawnPlayer();
     }
 }
