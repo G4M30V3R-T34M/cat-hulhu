@@ -15,6 +15,10 @@ public class HealthManager : MonoBehaviour
         currentHealth = maxHealth;
     }
 
+    public int GetCurrentHealth() {
+        return currentHealth;
+    }
+
     public void TakeDamage(int damage) {
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);

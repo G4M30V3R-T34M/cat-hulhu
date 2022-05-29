@@ -20,7 +20,7 @@ public class Door : Item
 
     protected override void ActionOnPick(GameObject character) {
         if (id == "0" || SaveDataManager.Instance.keysData.IsKeyCollected(id)) {
-            PerformAction();
+            PerformAction(character);
             // TODO: door open sound
         } else {
             PlayerDialog.Instance.ShowText("The door is closed, I need a key");
@@ -28,8 +28,9 @@ public class Door : Item
         }
     }
 
-    protected void PerformAction() {
+    protected void PerformAction(GameObject character) {
         if (returnToBigMap) {
+            character.GetComponent<PlayerController>().SaveHealth();
             SceneManager.LoadScene((int)Scenes.BigMap);
         } else {
             gameObject.SetActive(false);
