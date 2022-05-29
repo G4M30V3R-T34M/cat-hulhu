@@ -7,12 +7,6 @@ using TMPro;
 public class StartGame : MonoBehaviour
 {
     [SerializeField]
-    PlayerSettingsScriptable player;
-
-    [SerializeField]
-    GameDataScriptable game;
-
-    [SerializeField]
     TextMeshProUGUI investigatorName;
 
     [SerializeField]
@@ -25,16 +19,16 @@ public class StartGame : MonoBehaviour
     ChangeScene changeScene;
 
     public void Play() {
-        player.investigatorName = (investigatorName.text.Length != 1)
+        SaveDataManager.Instance.playerData.investigatorName = (investigatorName.text.Length != 1)
             ? investigatorName.text
             : "NoName";
 
-        player.color1 = Back.color;
-        player.color2 = Head.color;
-        player.color3 = Eyes.color;
+        SaveDataManager.Instance.playerData.backColor = Back.color;
+        SaveDataManager.Instance.playerData.headColor = Head.color;
+        SaveDataManager.Instance.playerData.eyesColor = Eyes.color;
 
-        game.lives = difficultyManager.GetDifficultyInvestigators();
-        game.difficulty = difficultyManager.difficulty;
+        SaveDataManager.Instance.gameData.difficulty = difficultyManager.difficulty;
+        SaveDataManager.Instance.gameData.lives = (int)difficultyManager.difficulty;
 
         changeScene.LoadGameIntro();
     }

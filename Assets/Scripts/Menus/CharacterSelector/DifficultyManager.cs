@@ -5,8 +5,6 @@ using TMPro;
 
 public class DifficultyManager : MonoBehaviour
 {
-    public int[] difficultyInvestigators;
-
     public Difficulty difficulty { get; private set; }
 
     [SerializeField]
@@ -17,8 +15,11 @@ public class DifficultyManager : MonoBehaviour
     }
 
     public void IncreaseDifficulty() {
-        difficulty++;
-        if ((int)difficulty > (int)Difficulty.HARD) {
+        if (difficulty == Difficulty.EASY) {
+            difficulty = Difficulty.MEDIUM;
+        } else if (difficulty == Difficulty.MEDIUM) {
+            difficulty = Difficulty.HARD;
+        } else {
             difficulty = Difficulty.EASY;
         }
 
@@ -26,16 +27,15 @@ public class DifficultyManager : MonoBehaviour
     }
 
     public void DecreaseDifficulty() {
-        difficulty--;
-        if ((int)difficulty < (int)Difficulty.EASY) {
+        if (difficulty == Difficulty.HARD) {
+            difficulty = Difficulty.MEDIUM;
+        } else if (difficulty == Difficulty.MEDIUM) {
+            difficulty = Difficulty.EASY;
+        } else {
             difficulty = Difficulty.HARD;
         }
 
         UpdateDifficulty();
-    }
-
-    public int GetDifficultyInvestigators() {
-        return difficultyInvestigators[(int)difficulty];
     }
 
     private void UpdateDifficulty() {
@@ -48,7 +48,7 @@ public class DifficultyManager : MonoBehaviour
     }
     
     private void UpdateDifficultyDetail() {
-        difficultyDetail.text = GetDifficultyInvestigators() + " Investigators";
+        difficultyDetail.text = (int)difficulty + " Investigators";
     }
 
 }
