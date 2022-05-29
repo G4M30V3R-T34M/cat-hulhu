@@ -11,6 +11,9 @@ public class Trap : MonoBehaviour
     [SerializeField]
     GameObject DeadBodySprite;
 
+    [SerializeField]
+    Collider2D obstacle;
+
     Collider2D trapCollider;
 
     [SerializeField]
@@ -29,13 +32,14 @@ public class Trap : MonoBehaviour
     }
 
     private void LoadTrapData() {
-        TrapScriptable trap = TrapManager.Instance.GetTrap(id);
-        if (trap != null) {
+        ActivatedTrap trap = SaveDataManager.Instance.trapData.GetTrap(id);
+        if (trap.id !=  TrapData.EMPTY_TRAP) {
             backColor.color = trap.backColor;
             headColor.color = trap.headColor;
             eyesColor.color = trap.eyesColor;
             DeadBodySprite.SetActive(true);
             trapCollider.enabled = false;
+            obstacle.enabled = false;
         } else {
             DeadBodySprite.SetActive(false);
             trapCollider.enabled = true;
@@ -46,7 +50,7 @@ public class Trap : MonoBehaviour
         if (collision.gameObject.layer == (int)Layers.Player) {
             PlayerColor playerColor = collision.gameObject.GetComponent<PlayerColor>();
             Color[] colors = playerColor.GetColors();
-            TrapManager.Instance.SaveTrap(id, colors[0], colors[1], colors[2]);
+            SaveDataManager.Instance.trapData.SaveTrap(id, colors[0], colors[1], colors[2]);
 
             // TODO: KILL PLAYER
             SceneManager.LoadScene((int)Scenes.TutorialLevel);

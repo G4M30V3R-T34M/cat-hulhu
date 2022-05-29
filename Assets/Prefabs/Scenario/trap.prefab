@@ -475,6 +475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: tut-01
   DeadBodySprite: {fileID: 5578939919895046377}
+  obstacle: {fileID: 1161165172314372551}
   backColor: {fileID: 520917480962471305}
   headColor: {fileID: 8806809772309751029}
   eyesColor: {fileID: 3776335629830977824}
@@ -814,6 +815,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e5d582056365af4bab3a15aa9319588, type: 3}
+--- !u!61 &1161165172314372551 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 1824448717371640586, guid: 4e5d582056365af4bab3a15aa9319588, type: 3}
+  m_PrefabInstance: {fileID: 670183000385843917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8760414406848239571 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8133441134071883038, guid: 4e5d582056365af4bab3a15aa9319588, type: 3}

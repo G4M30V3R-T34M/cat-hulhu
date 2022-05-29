@@ -14,13 +14,13 @@ public class Clue : Item
     }
 
     protected override void Start() {
-        if (CluesManager.Instance.IsClueCollected(id)) {
+        if (SaveDataManager.Instance.cluesData.IsClueCollected(id)) {
             gameObject.SetActive(false);
         }
     }
 
     protected override void ActionOnPick(GameObject character) {
-        CluesManager.Instance.CollectClue(id);
+        SaveDataManager.Instance.cluesData.CollectClue(id);
         gameObject.SetActive(false);
         PlayerDialog.Instance.ShowText(itemSettings.description);
     }

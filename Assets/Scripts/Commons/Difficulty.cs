@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum Difficulty 
 {
-    EASY,
-    MEDIUM,
-    HARD
+    EASY = 15,
+    MEDIUM = 10,
+    HARD = 5
 }

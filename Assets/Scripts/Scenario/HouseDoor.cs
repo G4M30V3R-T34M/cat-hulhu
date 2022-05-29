@@ -6,14 +6,13 @@ using UnityEngine.SceneManagement;
 public class HouseDoor : Item
 {
     [SerializeField]
-    PlayerPositionBigMapScriptable position;
-
-    [SerializeField]
     Scenes scene;
 
     protected override void ActionOnPick(GameObject character) {
-        position.xPos = character.transform.position.x;
-        position.yPos = character.transform.position.y;
+        SaveDataManager.Instance.playerData.lastBigMapPosition = new Vector2(
+            character.transform.position.x,
+            character.transform.position.y
+        );
         SceneManager.LoadScene((int)scene);
     }
 }

@@ -5,13 +5,10 @@ using UnityEngine.UI;
 
 public class SetPlayerHandColor : MonoBehaviour
 {
-    [SerializeField]
-    PlayerSettingsScriptable player;
-
     Image image;
 
     private void Awake() {
         image = GetComponent<Image>();
-        image.color = player.color1;
+        image.color = SaveDataManager.Instance.playerData.backColor;
     }
 }

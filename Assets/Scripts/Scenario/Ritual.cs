@@ -6,13 +6,10 @@ using UnityEngine.SceneManagement;
 public class Ritual : Item
 {
     [SerializeField]
-    GameDataScriptable gameData;
-
-    [SerializeField]
     int mediumClues, hardClues;
 
     protected override void ActionOnPick(GameObject character) {
-        int cluesRecovered = CluesManager.Instance.GetCurrentClues();
+        int cluesRecovered = SaveDataManager.Instance.cluesData.GetCurrentClues();
 
         if (EnoughCluesRecovered(cluesRecovered)) {
             SceneManager.LoadScene((int)Scenes.GameClear);
@@ -23,8 +20,8 @@ public class Ritual : Item
 
     private bool EnoughCluesRecovered(int clues) {
         return
-            (gameData.difficulty == Difficulty.EASY) ||
-            (gameData.difficulty == Difficulty.MEDIUM && clues >= mediumClues) ||
-            (gameData.difficulty == Difficulty.HARD && clues >= hardClues);
+            (SaveDataManager.Instance.gameData.difficulty == Difficulty.EASY) ||
+            (SaveDataManager.Instance.gameData.difficulty == Difficulty.MEDIUM && clues >= mediumClues) ||
+            (SaveDataManager.Instance.gameData.difficulty == Difficulty.HARD && clues >= hardClues);
     }
 }

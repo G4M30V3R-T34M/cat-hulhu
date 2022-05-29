@@ -8,10 +8,6 @@ public class PlayerSettingsScriptable : ScriptableObject
     [Range(0, 15)]
     public float speed;
 
-    public string investigatorName;
-
-    public Color color1, color2, color3;
-
     [Range(1, 5)]
     public int health;
 }

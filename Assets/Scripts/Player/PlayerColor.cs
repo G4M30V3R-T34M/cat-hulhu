@@ -5,9 +5,6 @@ using UnityEngine;
 public class PlayerColor : MonoBehaviour
 {
     [SerializeField]
-    PlayerSettingsScriptable playerSettings;
-
-    [SerializeField]
     SpriteRenderer back, head, eyes;
 
     private void Awake() {
@@ -15,9 +12,9 @@ public class PlayerColor : MonoBehaviour
     }
 
     public void UpdateColors() {
-        back.color = playerSettings.color1;
-        head.color = playerSettings.color2;
-        eyes.color = playerSettings.color3;
+        back.color = SaveDataManager.Instance.playerData.backColor;
+        head.color = SaveDataManager.Instance.playerData.headColor;
+        eyes.color = SaveDataManager.Instance.playerData.eyesColor;
     }
 
     public Color[] GetColors() {

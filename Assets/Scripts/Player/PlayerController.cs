@@ -16,8 +16,10 @@ public class PlayerController : MonoBehaviour
     private void Awake() {
         animator = GetComponent<Animator>();
         health = GetComponent<HealthManager>();
-        health.SetUp(playerSettings.health);
-        health.NoHealth += Die;
+    }
+
+    private void Start() {
+        SetUpHealth();
     }
 
     private void Update() {
@@ -27,6 +29,20 @@ public class PlayerController : MonoBehaviour
         else if (IsTryingToAttack() && CanAttack()) {
             AttackWithWeapon();
         }
+    }
+
+    private void SetUpHealth() {
+        int savedHealth = SaveDataManager.Instance.playerData.health;
+        if (savedHealth == 0) {
+            health.SetUp(playerSettings.health);
+        } else {
+            health.SetUp(savedHealth);
+        }
+        health.NoHealth += Die;
+    }
+
+    public void SaveHealth() {
+        SaveDataManager.Instance.playerData.health = health.GetCurrentHealth();
     }
 
     private bool CanPickUp() {

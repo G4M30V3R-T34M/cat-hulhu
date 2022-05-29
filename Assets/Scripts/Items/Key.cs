@@ -14,13 +14,13 @@ public class Key : Item
     }
 
     protected override void Start() {
-        if (KeyManager.Instance.IsKeyCollected(id)) {
+        if (SaveDataManager.Instance.keysData.IsKeyCollected(id)) {
             gameObject.SetActive(false);
         }
     }
 
     protected override void ActionOnPick(GameObject character) {
-        KeyManager.Instance.CollectKey(id);
+        SaveDataManager.Instance.keysData.CollectKey(id);
         gameObject.SetActive(false);
     }
 }
