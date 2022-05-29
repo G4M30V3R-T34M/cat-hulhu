@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField] private EnemyScriptable enemySettings;
     [SerializeField] private CircleCollider2D detectionCollider;
+    Collider2D enemyCollider;
 
 
     private AIDestinationSetter destinationSetter;
@@ -28,6 +29,7 @@ public class EnemyController : MonoBehaviour
         detectionCollider.radius = enemySettings.detectionRadius;
         GetComponent<AIPath>().maxSpeed = enemySettings.speed;
         animator = GetComponent<Animator>();
+        enemyCollider = GetComponent<Collider2D>();
     }
 
     private void Start() {
@@ -87,7 +89,11 @@ public class EnemyController : MonoBehaviour
     }
     private void Die() {
         health.NoHealth -= Die;
-        gameObject.SetActive(false);
+        animator.SetTrigger("Death");
+        destinationSetter.target = null;
+        detectionCollider.enabled = false;
+        enemyCollider.enabled = false;
+        //gameObject.SetActive(false);
         // TODO play sound
     }
 
