@@ -19,7 +19,7 @@ public class Door : Item
     }
 
     protected override void ActionOnPick(GameObject character) {
-        if (id == "0" || KeyManager.Instance.IsKeyCollected(id)) {
+        if (id == "0" || SaveDataManager.Instance.keysData.IsKeyCollected(id)) {
             PerformAction();
             // TODO: door open sound
         } else {
