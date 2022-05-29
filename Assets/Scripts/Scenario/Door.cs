@@ -17,6 +17,7 @@ public class Door : Item
 
     protected override void Awake() {
         base.Awake();
+
         soundManager = GameObject.FindGameObjectWithTag("EffectManager").GetComponent<SoundManager>();
         if (id == "") {
             Debug.LogWarning("Id not set for door", gameObject);

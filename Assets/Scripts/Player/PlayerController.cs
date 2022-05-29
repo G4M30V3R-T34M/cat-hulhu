@@ -20,10 +20,7 @@ public class PlayerController : MonoBehaviour
     private void Awake() {
         animator = GetComponent<Animator>();
         health = GetComponent<HealthManager>();
-        GameObject go = GameObject.FindGameObjectWithTag("EffectManager");
-        if (go != null) {
-            soundManager = go.GetComponent<SoundManager>();
-        }
+        soundManager = GameObject.FindGameObjectWithTag("EffectManager").GetComponent<SoundManager>();
     }
 
     private void Start() {
