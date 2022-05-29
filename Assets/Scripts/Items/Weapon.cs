@@ -15,7 +15,7 @@ public class Weapon : Item
         if (MustIgnore(collision)) { return; };
 
         if(collision.gameObject.layer == (int)Layers.Player) {
-            collision.GetComponent<PlayerController>().TakeDamage(itemSettings.damage);
+            collision.GetComponent<PlayerController>()?.TakeDamage(itemSettings.damage);
         } else if (collision.gameObject.layer == (int)Layers.Enemy) {
             collision.GetComponent<EnemyController>()?.TakeDamage(itemSettings.damage);
             collision.GetComponent<EnemyDummyController>()?.TakeDamage(itemSettings.damage);
