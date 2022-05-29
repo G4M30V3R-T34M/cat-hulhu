@@ -25,4 +25,8 @@ public class HouseData : MonoBehaviour
         HouseColors house = new HouseColors(id, colorBase, colorWall, colorUpperWall, colorRoof);
         houses.Add(house);
     }
+
+    public void Reset() {
+        houses.Clear();
+    }
 }

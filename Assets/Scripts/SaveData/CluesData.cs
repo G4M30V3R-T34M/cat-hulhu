@@ -17,4 +17,9 @@ public class CluesData : MonoBehaviour
     public void CollectClue(string clueId) {
         cluesCollected.Add(clueId);
     }
+
+    public void Reset() {
+        cluesCollected.Clear();
+    }
+
 }

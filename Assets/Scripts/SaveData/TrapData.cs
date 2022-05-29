@@ -25,4 +25,8 @@ public class TrapData : MonoBehaviour
         ActivatedTrap trap = new ActivatedTrap(id, backColor, headColor, eyesColor);
         activatedTraps.Add(trap);
     }
+
+    public void Reset() {
+        activatedTraps.Clear();
+    }
 }

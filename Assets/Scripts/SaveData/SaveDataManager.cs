@@ -29,4 +29,14 @@ public class SaveDataManager : SingletonPersistent<SaveDataManager>
         enemiesData = GetComponent<EnemiesData>();
     }
 
+    public void ResetData() {
+        playerData.Reset();
+        gameData.Reset();
+        cluesData.Reset();
+        trapData.Reset();
+        keysData.Reset();
+        houseData.Reset();
+        enemiesData.Reset();
+    }
+
 }
