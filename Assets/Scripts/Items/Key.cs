@@ -21,6 +21,9 @@ public class Key : Item
 
     protected override void ActionOnPick(GameObject character) {
         SaveDataManager.Instance.keysData.CollectKey(id);
+        if (itemSettings.description != string.Empty) {
+            PlayerDialog.Instance.ShowText(itemSettings.description);
+        }
         gameObject.SetActive(false);
     }
 }

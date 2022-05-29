@@ -1519,6 +1519,10 @@ PrefabInstance:
       propertyPath: id
       value: tut-03
       objectReference: {fileID: 0}
+    - target: {fileID: 3846150742349929794, guid: 0ed5bfe8bbf191b4b8e0ac9a1f14a7b7, type: 3}
+      propertyPath: itemSettings
+      value: 
+      objectReference: {fileID: 11400000, guid: 2588bfe195769004eaa70dea9c8337df, type: 2}
     - target: {fileID: 9037195888536516088, guid: 0ed5bfe8bbf191b4b8e0ac9a1f14a7b7, type: 3}
       propertyPath: m_RootOrder
       value: 0
