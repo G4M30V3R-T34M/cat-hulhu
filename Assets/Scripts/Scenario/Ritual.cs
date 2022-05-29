@@ -12,7 +12,7 @@ public class Ritual : Item
     int mediumClues, hardClues;
 
     protected override void ActionOnPick(GameObject character) {
-        int cluesRecovered = CluesManager.Instance.GetCurrentClues();
+        int cluesRecovered = SaveDataManager.Instance.cluesData.GetCurrentClues();
 
         if (EnoughCluesRecovered(cluesRecovered)) {
             SceneManager.LoadScene((int)Scenes.GameClear);
