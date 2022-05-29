@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KeysData : MonoBehaviour
 {
-    public List<string> keysCollected = new List<string>();
+    List<string> keysCollected = new List<string>();
 
     public int GetCurrentKeys() {
         return keysCollected.Count;
