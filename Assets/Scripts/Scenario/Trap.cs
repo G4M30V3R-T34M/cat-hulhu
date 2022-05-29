@@ -11,6 +11,9 @@ public class Trap : MonoBehaviour
     [SerializeField]
     GameObject DeadBodySprite;
 
+    [SerializeField]
+    Collider2D obstacle;
+
     Collider2D trapCollider;
 
     [SerializeField]
@@ -36,6 +39,7 @@ public class Trap : MonoBehaviour
             eyesColor.color = trap.eyesColor;
             DeadBodySprite.SetActive(true);
             trapCollider.enabled = false;
+            obstacle.enabled = false;
         } else {
             DeadBodySprite.SetActive(false);
             trapCollider.enabled = true;
