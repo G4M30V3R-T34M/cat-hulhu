@@ -46,7 +46,7 @@ public class Spawner
     }
 
     private static bool PlayerHasLivesLeft() {
-        return SaveDataManager.Instance.gameData.lives == 0;
+        return SaveDataManager.Instance.gameData.lives > 0;
     }
 
     private static void SetNewRandomColors() {
