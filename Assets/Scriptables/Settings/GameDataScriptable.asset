@@ -13,10 +13,8 @@ MonoBehaviour:
   m_Name: GameDataScriptable
   m_EditorClassIdentifier: 
   lives: 0
-  clues:
-  - tut-db-01
-  keys:
-  - tut-01
+  clues: []
+  keys: []
   traps:
   - {fileID: 11400000, guid: 14a13ecdef6313b448257143f07d6ae2, type: 2}
   - {fileID: 11400000, guid: 754c2acdc148da4409de84a73ac5fa21, type: 2}

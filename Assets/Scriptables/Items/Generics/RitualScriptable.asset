@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 535f394df43155842ae6e6495a382254, type: 3}
-  m_Name: TrapScriptable 1
+  m_Script: {fileID: 11500000, guid: 093b625742528aa49b879345c1cd6cbc, type: 3}
+  m_Name: RitualScriptable
   m_EditorClassIdentifier: 
-  id: 
-  backColor: {r: 1, g: 0.6865276, b: 0.30591792, a: 1}
-  headColor: {r: 1, g: 0.79236734, b: 0.045833945, a: 1}
-  eyesColor: {r: 1, g: 0.21840799, b: 0.5958988, a: 1}
+  isWeapon: 0
+  damage: 0
+  description: I need to find more clues to stop the ritual

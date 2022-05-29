@@ -22,8 +22,6 @@ public class Clue : Item
     protected override void ActionOnPick(GameObject character) {
         CluesManager.Instance.CollectClue(id);
         gameObject.SetActive(false);
-
-        // TODO open canvas and  display clue description
-        Debug.Log(itemSettings.description);
+        PlayerDialog.Instance.ShowText(itemSettings.description);
     }
 }

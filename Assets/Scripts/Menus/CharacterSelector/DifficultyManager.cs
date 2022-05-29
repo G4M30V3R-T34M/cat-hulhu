@@ -5,7 +5,6 @@ using TMPro;
 
 public class DifficultyManager : MonoBehaviour
 {
-    public enum Difficulty { Easy, Medium , Hard}
     public int[] difficultyInvestigators;
 
     public Difficulty difficulty { get; private set; }
@@ -14,13 +13,13 @@ public class DifficultyManager : MonoBehaviour
     private TextMeshProUGUI difficultyText, difficultyDetail;
 
     private void Awake() {
-        difficulty = Difficulty.Medium;
+        difficulty = Difficulty.MEDIUM;
     }
 
     public void IncreaseDifficulty() {
         difficulty++;
-        if ((int)difficulty > (int)Difficulty.Hard) {
-            difficulty = Difficulty.Easy;
+        if ((int)difficulty > (int)Difficulty.HARD) {
+            difficulty = Difficulty.EASY;
         }
 
         UpdateDifficulty();
@@ -28,8 +27,8 @@ public class DifficultyManager : MonoBehaviour
 
     public void DecreaseDifficulty() {
         difficulty--;
-        if ((int)difficulty < (int)Difficulty.Easy) {
-            difficulty = Difficulty.Hard;
+        if ((int)difficulty < (int)Difficulty.EASY) {
+            difficulty = Difficulty.HARD;
         }
 
         UpdateDifficulty();
