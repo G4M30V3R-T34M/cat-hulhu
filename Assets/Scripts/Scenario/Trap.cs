@@ -52,8 +52,7 @@ public class Trap : MonoBehaviour
             Color[] colors = playerColor.GetColors();
             SaveDataManager.Instance.trapData.SaveTrap(id, colors[0], colors[1], colors[2]);
 
-            // TODO: KILL PLAYER
-            SceneManager.LoadScene((int)Scenes.TutorialLevel);
+            collision.gameObject.GetComponent<PlayerController>().DeathByTrap();
         }
     }
 }
