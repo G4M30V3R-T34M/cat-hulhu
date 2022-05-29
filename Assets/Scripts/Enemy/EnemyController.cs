@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour
     Animator animator;
 
     bool isAttacking;
+    bool isDead = false;
 
     private void Awake() {
         destinationSetter = gameObject.GetComponent<AIDestinationSetter>();
@@ -34,6 +35,7 @@ public class EnemyController : MonoBehaviour
     }
 
     private void Start() {
+        CheckDead();
         // Game object to remember initial position
         startPosition = new GameObject();
         startPosition.transform.position = this.gameObject.transform.position;
@@ -41,29 +43,36 @@ public class EnemyController : MonoBehaviour
         startPosition.transform.rotation = this.gameObject.transform.rotation;
     }
 
+    private void CheckDead() {
+        DeadEnemy enemy = SaveDataManager.Instance.enemiesData.GetEnemy(id);
+        if (enemy.id != EnemiesData.EMPTY_ENEMY) {
+            gameObject.SetActive(false);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.layer == (int)Layers.Player) {
-            destinationSetter.target = collision.gameObject.transform;
+            SetTarget(collision.gameObject.transform);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision) {
         if (isAttacking) { return; }
         if (collision.gameObject.layer == (int)Layers.Player) {
-            destinationSetter.target = startPosition.transform;
+            SetTarget(startPosition.transform);
         }
     }
 
     private void OnTriggerStay2D(Collider2D collision) {
         if (collision.gameObject.layer == (int)Layers.Player) {
-            destinationSetter.target = collision.gameObject.transform;
+            SetTarget(collision.gameObject.transform);
         }
     }
 
     public void Attack() {
         isAttacking = true;
         detectionCollider.enabled = false;
-        destinationSetter.target = null;
+        SetTarget(null);
         animator.SetBool("isAttacking", true);
     }
 
@@ -75,12 +84,19 @@ public class EnemyController : MonoBehaviour
 
     public IEnumerator FinishAttackCoroutine() {
         yield return new WaitForSeconds(0.7f);
-        destinationSetter.target = startPosition.transform;
+        SetTarget(startPosition.transform);
         detectionCollider.enabled = true;
     }
 
+    private void SetTarget(Transform target) {
+        if (isDead) { return; }
+        destinationSetter.target = target;
+    }
+
     public bool TargetIsPlayer() {
-        return destinationSetter.target != null && destinationSetter.target.gameObject.layer == (int)Layers.Player;
+        return
+            destinationSetter.target != null &&
+            destinationSetter.target.gameObject.layer == (int)Layers.Player;
     }
 
     // Health manager function
@@ -91,10 +107,15 @@ public class EnemyController : MonoBehaviour
     private void Die() {
         health.NoHealth -= Die;
         animator.SetTrigger("Death");
+        isDead = true;
         destinationSetter.target = null;
         detectionCollider.enabled = false;
         enemyCollider.enabled = false;
-        //gameObject.SetActive(false);
+        SaveDataManager.Instance.enemiesData.SaveEnemy(
+            this.id,
+            transform.position,
+            transform.rotation.eulerAngles
+        ) ;
         // TODO play sound
     }
 
