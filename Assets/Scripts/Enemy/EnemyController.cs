@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using Feto; 
 
 [RequireComponent(typeof(AIDestinationSetter))]
 [RequireComponent(typeof(AIPath))]
@@ -11,6 +12,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] string id;
     [SerializeField] private EnemyScriptable enemySettings;
     [SerializeField] private CircleCollider2D detectionCollider;
+    [SerializeField] ObjectPool deadEnemiesPool;
     Collider2D enemyCollider;
 
 
@@ -24,6 +26,7 @@ public class EnemyController : MonoBehaviour
     bool isDead = false;
 
     private void Awake() {
+        CheckId();
         destinationSetter = gameObject.GetComponent<AIDestinationSetter>();
         health = GetComponent<HealthManager>();
         health.SetUp(enemySettings.health); ;
@@ -32,6 +35,12 @@ public class EnemyController : MonoBehaviour
         GetComponent<AIPath>().maxSpeed = enemySettings.speed;
         animator = GetComponent<Animator>();
         enemyCollider = GetComponent<Collider2D>();
+    }
+
+    private void CheckId() {
+        if (id == "") {
+            Debug.LogError("Enemy without ID", gameObject);
+        }
     }
 
     private void Start() {
@@ -46,6 +55,9 @@ public class EnemyController : MonoBehaviour
     private void CheckDead() {
         DeadEnemy enemy = SaveDataManager.Instance.enemiesData.GetEnemy(id);
         if (enemy.id != EnemiesData.EMPTY_ENEMY) {
+            DeadEnemyPoolable deadEnemy = (DeadEnemyPoolable)deadEnemiesPool.GetNext();
+            deadEnemy.transform.SetPositionAndRotation(enemy.position, Quaternion.Euler(enemy.rotation));
+            deadEnemy.gameObject.SetActive(true);
             gameObject.SetActive(false);
         }
     }
