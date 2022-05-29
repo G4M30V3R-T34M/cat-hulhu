@@ -372,6 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1db9eff9b4034499cf9a50a5eff75c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hit: {fileID: 8300000, guid: 01a23a584e7d57d46b8fdc8b395117a4, type: 3}
   enemySettings: {fileID: 11400000, guid: 0af6919d355ad154e811679f12b8f739, type: 2}
   drop: {fileID: 0}
 --- !u!1 &8513413248616470800

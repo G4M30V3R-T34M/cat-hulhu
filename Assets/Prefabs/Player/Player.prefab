@@ -144,6 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSettings: {fileID: 11400000, guid: 273bdfe4022c7be49bb6f7b0d80ae964, type: 2}
+  hit: {fileID: 8300000, guid: 2fc2304bf44e56544b3583fdb56aebf3, type: 3}
+  death: {fileID: 8300000, guid: 9387a1aa6a47b534d91edf143d4a7947, type: 3}
   weapon: {fileID: 4564975643917247860}
   itemToPick: {fileID: 0}
   pickableItem: 0

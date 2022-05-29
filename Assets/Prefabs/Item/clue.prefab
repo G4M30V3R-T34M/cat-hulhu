@@ -187,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSettings: {fileID: 11400000, guid: 061d6845d3aef2f44b061ac5fae918c0, type: 2}
   basicItem: 1
+  cluePicked: {fileID: 8300000, guid: c34a7c4ecf4615c4aa8c10818a9151fd, type: 3}
   id: 
 --- !u!50 &9037195888536516091
 Rigidbody2D:

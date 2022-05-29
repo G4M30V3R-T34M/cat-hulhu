@@ -10878,7 +10878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8310050725201436707, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8310050725201436707, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15700,7 +15700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9037195888536516088, guid: 0ed5bfe8bbf191b4b8e0ac9a1f14a7b7, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9037195888536516088, guid: 0ed5bfe8bbf191b4b8e0ac9a1f14a7b7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16764,7 +16764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b3b9cc32cf425a4dbfcb3402ff4e9f3, type: 3}
---- !u!1001 &5573170892237819127
+--- !u!1001 &7140045802494418000
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2

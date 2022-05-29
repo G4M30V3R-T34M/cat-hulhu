@@ -102,6 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSettings: {fileID: 11400000, guid: 3d5282998362a5445ad5fe51f2700333, type: 2}
   basicItem: 0
+  closedDoor: {fileID: 8300000, guid: 31a53934ddcde4b4cb9b58283284c8c9, type: 3}
+  openDoor: {fileID: 8300000, guid: 784a7737e201615408784b029b97fee6, type: 3}
   id: tut-01
   returnToBigMap: 0
 --- !u!61 &7291339756386322542

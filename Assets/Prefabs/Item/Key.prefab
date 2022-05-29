@@ -187,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSettings: {fileID: 11400000, guid: 6e5f1c3bd14de954aaa7587a4602513b, type: 2}
   basicItem: 1
+  keyPicked: {fileID: 8300000, guid: 2f9b45c2ae2b97847ac6efd8d5df104d, type: 3}
   id: 
 --- !u!50 &9037195888536516091
 Rigidbody2D:

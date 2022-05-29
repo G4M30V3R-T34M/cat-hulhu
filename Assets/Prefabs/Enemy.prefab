@@ -627,6 +627,21 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 1
+--- !u!114 &6712174163218199332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6219404941909131061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2760d76976080419ba616f5dd211db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hit: {fileID: 8300000, guid: 01a23a584e7d57d46b8fdc8b395117a4, type: 3}
+  enemySettings: {fileID: 11400000, guid: 3c5dfa67104ce564eb3a3fec83fb3959, type: 2}
+  detectionCollider: {fileID: 8854820278598189990}
 --- !u!95 &7725166840573352947
 Animator:
   serializedVersion: 4
