@@ -17,4 +17,8 @@ public class KeysData : MonoBehaviour
     public void CollectKey(string keyId) {
         keysCollected.Add(keyId);
     }
+
+    public void Reset() {
+        keysCollected.Clear();
+    }
 }

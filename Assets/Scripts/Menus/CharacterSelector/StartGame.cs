@@ -19,6 +19,8 @@ public class StartGame : MonoBehaviour
     ChangeScene changeScene;
 
     public void Play() {
+        SaveDataManager.Instance.ResetData();
+
         SaveDataManager.Instance.playerData.investigatorName = (investigatorName.text.Length != 1)
             ? investigatorName.text
             : "NoName";

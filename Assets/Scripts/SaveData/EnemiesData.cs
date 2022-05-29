@@ -6,6 +6,7 @@ public class EnemiesData : MonoBehaviour
 {
     public const string EMPTY_ENEMY = "";
     List<DeadEnemy> deadEnemies = new List<DeadEnemy>();
+
     public DeadEnemy GetEnemy(string enemyId) {
         DeadEnemy enemy = new DeadEnemy(EMPTY_ENEMY, Vector3.zero, Vector3.zero);
 
@@ -23,5 +24,9 @@ public class EnemiesData : MonoBehaviour
     public void SaveEnemy(string id, Vector3 position, Vector3 rotation) {
         DeadEnemy enemy = new DeadEnemy(id, position, rotation);
         deadEnemies.Add(enemy);
+    }
+
+    public void Reset() {
+        deadEnemies.Clear();
     }
 }
