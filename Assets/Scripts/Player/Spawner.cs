@@ -30,19 +30,19 @@ public class Spawner
     static int nameIndex = 0;
 
     public static void RespawnPlayer() {
-        DecrementTotalLives();
-        SetNewRandomColors();
-        SetNewName();
-        SpawnPlayer();
-    }
-
-    private static void DecrementTotalLives() {
         if (PlayerHasLivesLeft()) {
-            SaveDataManager.Instance.gameData.lives -= 1;
+            DecrementTotalLives();
+            SetNewRandomColors();
+            SetNewName();
+            SpawnPlayer();
         }
         else {
             SceneManager.LoadScene((int)Scenes.GameOver);
         }
+    }
+
+    private static void DecrementTotalLives() {
+        SaveDataManager.Instance.gameData.lives -= 1;
     }
 
     private static bool PlayerHasLivesLeft() {
