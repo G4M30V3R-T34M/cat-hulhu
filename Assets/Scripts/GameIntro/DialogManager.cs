@@ -13,9 +13,6 @@ public class DialogManager : MonoBehaviour
     TextMeshProUGUI speaker, colon, content;
 
     [SerializeField]
-    PlayerSettingsScriptable player;
-
-    [SerializeField]
     GameObject clickToContinue;
 
     Animator animator;
@@ -77,7 +74,7 @@ public class DialogManager : MonoBehaviour
     }
 
     private string ReplaceInvestigatorName(string text) {
-        return text.Replace("NoName", player.investigatorName);
+        return text.Replace("NoName", SaveDataManager.Instance.playerData.investigatorName);
     }
 
     private void EndDialog() {
