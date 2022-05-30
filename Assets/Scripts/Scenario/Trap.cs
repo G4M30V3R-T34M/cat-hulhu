@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Trap : MonoBehaviour
 {
+    static bool playerDead = false;
+
     [SerializeField]
     string id = "";
 
@@ -25,6 +27,7 @@ public class Trap : MonoBehaviour
         }
 
         trapCollider = GetComponent<Collider2D>();
+        playerDead = false;
     }
 
     private void Start() {
@@ -47,7 +50,8 @@ public class Trap : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.gameObject.layer == (int)Layers.Player) {
+        if (collision.gameObject.layer == (int)Layers.Player && !playerDead) {
+            playerDead = true;
             PlayerColor playerColor = collision.gameObject.GetComponent<PlayerColor>();
             Color[] colors = playerColor.GetColors();
             SaveDataManager.Instance.trapData.SaveTrap(id, colors[0], colors[1], colors[2]);
