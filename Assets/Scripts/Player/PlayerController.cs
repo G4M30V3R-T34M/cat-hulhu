@@ -40,10 +40,12 @@ public class PlayerController : MonoBehaviour
         int savedHealth = SaveDataManager.Instance.playerData.health;
         if (savedHealth == 0) {
             health.SetUp(playerSettings.health);
+            SaveDataManager.Instance.playerData.health = playerSettings.health;
         } else {
             health.SetUp(savedHealth);
         }
         health.NoHealth += Die;
+        HUD.Instance.UpdateLives();
     }
 
     public void SaveHealth() {
@@ -109,6 +111,9 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage) {
         health.TakeDamage(damage);
+        SaveDataManager.Instance.playerData.health = health.GetCurrentHealth();
+
+        HUD.Instance.UpdateLives();
         soundManager.PlayClip(hit);
     }
 

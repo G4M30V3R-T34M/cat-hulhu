@@ -28,5 +28,6 @@ public class Clue : Item
         SaveDataManager.Instance.cluesData.CollectClue(id);
         gameObject.SetActive(false);
         PlayerDialog.Instance.ShowText(itemSettings.description);
+        HUD.Instance.UpdateClueNumber();
     }
 }

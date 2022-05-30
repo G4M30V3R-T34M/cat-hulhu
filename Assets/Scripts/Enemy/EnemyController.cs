@@ -133,7 +133,6 @@ public class EnemyController : MonoBehaviour
             transform.position,
             transform.rotation.eulerAngles
         ) ;
-        gameObject.SetActive(false);
     }
 
 }
