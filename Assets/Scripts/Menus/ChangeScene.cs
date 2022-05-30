@@ -1,21 +1,20 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
     public void LoadMainMenu () {
-        SceneManager.LoadScene((int)Scenes.MainMenu);
+        SceneManager.Instance.LoadScene((int)Scenes.MainMenu);
     }
 
     public void LoadCharacterSelect () {
-        SceneManager.LoadScene((int)Scenes.CharacterSelect);
+        SceneManager.Instance.LoadScene((int)Scenes.CharacterSelect);
     }
 
     public void LoadCredits () {
-        SceneManager.LoadScene((int)Scenes.Credits);
+        SceneManager.Instance.LoadScene((int)Scenes.Credits);
     }
 
     public void LoadGameIntro() {
-        SceneManager.LoadScene((int)Scenes.GameIntro);
+        SceneManager.Instance.LoadScene((int)Scenes.GameIntro);
     }
 }

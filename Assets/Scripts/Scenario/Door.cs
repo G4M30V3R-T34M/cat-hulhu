@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Door : Item
 {
@@ -37,7 +36,7 @@ public class Door : Item
     protected void PerformAction(GameObject character) {
         if (returnToBigMap) {
             character.GetComponent<PlayerController>().SaveHealth();
-            SceneManager.LoadScene((int)Scenes.BigMap);
+            SceneManager.Instance.LoadScene((int)Scenes.BigMap);
         } else {
             gameObject.SetActive(false);
         }
