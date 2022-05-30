@@ -14,12 +14,14 @@ public class PlayerController : MonoBehaviour
     public GameObject itemToPick;
     private HealthManager health;
     public bool pickableItem;
+    PlayerColor playerColors;
 
     Animator animator;
 
     private void Awake() {
         animator = GetComponent<Animator>();
         health = GetComponent<HealthManager>();
+        playerColors = GetComponent<PlayerColor>();
         soundManager = GameObject.FindGameObjectWithTag("EffectManager").GetComponent<SoundManager>();
     }
 
@@ -104,7 +106,7 @@ public class PlayerController : MonoBehaviour
 
     private void Die() {
         soundManager.PlayClip(death);
-        // TODO: Leave corpse
+        SaveDeadBody();
         animator.SetTrigger("Death");
     }
 
@@ -121,6 +123,17 @@ public class PlayerController : MonoBehaviour
         health.TakeDamage(playerSettings.health);
         SaveDataManager.Instance.playerData.health = health.GetCurrentHealth();
         animator.SetTrigger("Death");
+    }
+
+    private void SaveDeadBody() {
+        SaveDataManager.Instance.deadPlayerData.SaveDeadPlayer(
+            UnityEngine.SceneManagement.SceneManager.GetActiveScene().name,
+            playerColors.back.color,
+            playerColors.head.color,
+            playerColors.eyes.color,
+            transform.position,
+            transform.rotation.eulerAngles
+            );
     }
 
     public void RespawnPlayer() {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerColor : MonoBehaviour
 {
     [SerializeField]
-    SpriteRenderer back, head, eyes;
+    public SpriteRenderer back, head, eyes;
 
     private void Awake() {
         UpdateColors();

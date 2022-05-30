@@ -16,10 +16,23 @@ public class Door : Item
 
     protected override void Awake() {
         base.Awake();
-
         soundManager = GameObject.FindGameObjectWithTag("EffectManager").GetComponent<SoundManager>();
+    }
+
+    protected override void Start() {
+        base.Start();
+        CheckOpenDoor();
+    }
+
+    private void CheckId() {
         if (id == "") {
             Debug.LogWarning("Id not set for door", gameObject);
+        }
+    }
+
+    private void CheckOpenDoor() {
+        if (SaveDataManager.Instance.doorsData.IsDoorOpen(id) && !returnToBigMap) {
+            gameObject.SetActive(false);
         }
     }
 
@@ -38,6 +51,7 @@ public class Door : Item
             character.GetComponent<PlayerController>().SaveHealth();
             SceneManager.Instance.LoadScene((int)Scenes.BigMap);
         } else {
+            SaveDataManager.Instance.doorsData.OpenDoor(id);
             gameObject.SetActive(false);
         }
     }
