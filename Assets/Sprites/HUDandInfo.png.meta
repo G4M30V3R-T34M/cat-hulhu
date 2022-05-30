@@ -187,7 +187,7 @@ TextureImporter:
         width: 151
         height: 103
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -208,7 +208,7 @@ TextureImporter:
         width: 106
         height: 88
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -216,6 +216,48 @@ TextureImporter:
       bones: []
       spriteID: c7303e5b115c7604a87d6e3adfd950a8
       internalID: -120614038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cathulhu
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 75
+        width: 218
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7446fa650ccbedc408b8b872a4f27e85
+      internalID: -1214360231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cat-Transition
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 112
+        width: 122
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b60a053e718cff44099ac434eea02d4e
+      internalID: 397280902
       vertices: []
       indices: 
       edges: []
@@ -233,7 +275,9 @@ TextureImporter:
     nameFileIdTable:
       Heart: -1013639866
       StraightArrow: -69288821
+      Cathulhu: -1214360231
       NameBar: -1504414840
+      Cat-Transition: 397280902
       TurnArrow: -120614038
       PlayerDialog: 1811116584
   spritePackingTag: 
