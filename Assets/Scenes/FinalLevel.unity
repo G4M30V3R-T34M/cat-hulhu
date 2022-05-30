@@ -2743,6 +2743,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 512787517}
     m_Modifications:
+    - target: {fileID: 308207010680274768, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
+      propertyPath: id
+      value: final-05
+      objectReference: {fileID: 0}
     - target: {fileID: 2442237293060995623, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
       propertyPath: m_Name
       value: DeadBody
@@ -4278,6 +4282,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 614117950}
     m_Modifications:
+    - target: {fileID: 308207010680274768, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
+      propertyPath: id
+      value: final-07
+      objectReference: {fileID: 0}
     - target: {fileID: 2442237293060995623, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
       propertyPath: m_Name
       value: DeadBody
@@ -11274,6 +11282,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1070076361}
     m_Modifications:
+    - target: {fileID: 308207010680274768, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
+      propertyPath: id
+      value: final-02
+      objectReference: {fileID: 0}
     - target: {fileID: 2442237293060995623, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
       propertyPath: m_Name
       value: DeadBody
@@ -14433,6 +14445,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1108675052}
     m_Modifications:
+    - target: {fileID: 308207010680274768, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
+      propertyPath: id
+      value: final-08
+      objectReference: {fileID: 0}
     - target: {fileID: 2442237293060995623, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
       propertyPath: m_Name
       value: DeadBody
@@ -14927,6 +14943,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 549505248}
     m_Modifications:
+    - target: {fileID: 308207010680274768, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
+      propertyPath: id
+      value: final-01
+      objectReference: {fileID: 0}
     - target: {fileID: 2442237293060995623, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
       propertyPath: m_Name
       value: DeadBody
@@ -16407,6 +16427,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1452488314}
     m_Modifications:
+    - target: {fileID: 308207010680274768, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
+      propertyPath: id
+      value: final-03
+      objectReference: {fileID: 0}
     - target: {fileID: 2442237293060995623, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
       propertyPath: m_Name
       value: DeadBody
@@ -18042,6 +18066,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 831834670}
     m_Modifications:
+    - target: {fileID: 308207010680274768, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
+      propertyPath: id
+      value: final-04
+      objectReference: {fileID: 0}
     - target: {fileID: 2442237293060995623, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
       propertyPath: m_Name
       value: DeadBody
@@ -23277,6 +23305,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 328413380}
     m_Modifications:
+    - target: {fileID: 308207010680274768, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
+      propertyPath: id
+      value: final-06
+      objectReference: {fileID: 0}
     - target: {fileID: 2442237293060995623, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
       propertyPath: m_Name
       value: DeadBody
