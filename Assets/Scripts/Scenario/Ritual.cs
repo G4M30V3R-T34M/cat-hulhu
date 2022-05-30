@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Ritual : Item
 {
@@ -12,7 +11,7 @@ public class Ritual : Item
         int cluesRecovered = SaveDataManager.Instance.cluesData.GetCurrentClues();
 
         if (EnoughCluesRecovered(cluesRecovered)) {
-            SceneManager.LoadScene((int)Scenes.GameClear);
+            SceneManager.Instance.LoadScene((int)Scenes.GameClear);
         } else {
             PlayerDialog.Instance.ShowText(itemSettings.description);
         }

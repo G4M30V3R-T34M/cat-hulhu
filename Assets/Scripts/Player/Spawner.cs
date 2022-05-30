@@ -1,8 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-
 public class Spawner
 {
     static float BIGMAPX = 0;
@@ -37,7 +32,7 @@ public class Spawner
             SpawnPlayer();
         }
         else {
-            SceneManager.LoadScene((int)Scenes.GameOver);
+            SceneManager.Instance.LoadScene((int)Scenes.GameOver);
         }
     }
 
@@ -67,12 +62,12 @@ public class Spawner
 
     private static void SpawnPlayer() {
         if (!PlayerFinishedTutorial()) {
-            SceneManager.LoadScene((int)Scenes.TutorialLevel);
+            SceneManager.Instance.LoadScene((int)Scenes.TutorialLevel);
         }
         else {
             SaveDataManager.Instance.playerData.lastBigMapPosition.x = BIGMAPX;
             SaveDataManager.Instance.playerData.lastBigMapPosition.y = BIGMAPY;
-            SceneManager.LoadScene((int)Scenes.BigMap);
+            SceneManager.Instance.LoadScene((int)Scenes.BigMap);
         }
     }
 

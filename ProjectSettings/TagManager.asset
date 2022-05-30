@@ -57,3 +57,6 @@ TagManager:
   - name: Player
     uniqueID: 3467590111
     locked: 0
+  - name: SceneTransition
+    uniqueID: 3079552279
+    locked: 0

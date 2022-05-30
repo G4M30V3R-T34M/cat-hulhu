@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class HouseDoor : Item
 {
@@ -13,6 +12,6 @@ public class HouseDoor : Item
             character.transform.position.x,
             character.transform.position.y
         );
-        SceneManager.LoadScene((int)scene);
+        SceneManager.Instance.LoadScene((int)scene);
     }
 }
