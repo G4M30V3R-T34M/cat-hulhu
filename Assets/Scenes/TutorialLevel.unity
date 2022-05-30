@@ -1218,6 +1218,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5138895902336565536, guid: 7600bda4e6a3c8f44b7eb5b4a4aa34ba, type: 3}
+      propertyPath: lives
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5138895902336565538, guid: 7600bda4e6a3c8f44b7eb5b4a4aa34ba, type: 3}
       propertyPath: m_Name
       value: SaveData

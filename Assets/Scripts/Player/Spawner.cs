@@ -30,8 +30,7 @@ public class Spawner
             SetNewRandomColors();
             SetNewName();
             SpawnPlayer();
-        }
-        else {
+        } else {
             SceneManager.Instance.LoadScene((int)Scenes.GameOver);
         }
     }
