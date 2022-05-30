@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Clue : Item
 {
+    [SerializeField] AudioClip cluePicked;
+    SoundManager soundManager;
+
     public string id = "";
 
     protected override void Awake() {
         base.Awake();
+        soundManager = GameObject.FindGameObjectWithTag("EffectManager").GetComponent<SoundManager>();
         if (id == "") {
             Debug.LogError("Id not set for clue", gameObject);
         }
@@ -20,6 +24,7 @@ public class Clue : Item
     }
 
     protected override void ActionOnPick(GameObject character) {
+        soundManager.PlayClip(cluePicked);
         SaveDataManager.Instance.cluesData.CollectClue(id);
         gameObject.SetActive(false);
         PlayerDialog.Instance.ShowText(itemSettings.description);

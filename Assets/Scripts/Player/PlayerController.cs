@@ -6,6 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerSettingsScriptable playerSettings;
 
+    [SerializeField] private AudioClip hit;
+    [SerializeField] private AudioClip death;
+    SoundManager soundManager;
+
     public Item weapon;
     public GameObject itemToPick;
     private HealthManager health;
@@ -16,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private void Awake() {
         animator = GetComponent<Animator>();
         health = GetComponent<HealthManager>();
+        soundManager = GameObject.FindGameObjectWithTag("EffectManager").GetComponent<SoundManager>();
     }
 
     private void Start() {
@@ -96,14 +101,15 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Die() {
-        gameObject.SetActive(false);
+        soundManager.PlayClip(death);
         // TODO leave the corpse
         Spawner.RespawnPlayer();
+        gameObject.SetActive(false);
     }
 
     public void TakeDamage(int damage) {
         health.TakeDamage(damage);
-        // TODO play sound
+        soundManager.PlayClip(hit);
     }
 
     public void DeathByTrap() {

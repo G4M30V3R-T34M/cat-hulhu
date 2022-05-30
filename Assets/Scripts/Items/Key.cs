@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Key : Item
 {
+    [SerializeField] private AudioClip keyPicked;
+    SoundManager soundManager;
     public string id = "";
 
     protected override void Awake() {
@@ -11,6 +13,7 @@ public class Key : Item
         if (id == "") {
             Debug.LogError("Id not set for key", gameObject);
         }
+        soundManager = GameObject.FindGameObjectWithTag("EffectManager").GetComponent<SoundManager>();
     }
 
     protected override void Start() {
@@ -20,6 +23,7 @@ public class Key : Item
     }
 
     protected override void ActionOnPick(GameObject character) {
+        soundManager.PlayClip(keyPicked);
         SaveDataManager.Instance.keysData.CollectKey(id);
         if (itemSettings.description != string.Empty) {
             PlayerDialog.Instance.ShowText(itemSettings.description);

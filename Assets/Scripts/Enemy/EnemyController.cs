@@ -10,6 +10,10 @@ using Feto;
 public class EnemyController : MonoBehaviour
 {
     [SerializeField] string id;
+
+    [SerializeField] private AudioClip hit;
+    SoundManager soundManager;
+
     [SerializeField] private EnemyScriptable enemySettings;
     [SerializeField] private CircleCollider2D detectionCollider;
     [SerializeField] ObjectPool deadEnemiesPool;
@@ -34,6 +38,7 @@ public class EnemyController : MonoBehaviour
         detectionCollider.radius = enemySettings.detectionRadius;
         GetComponent<AIPath>().maxSpeed = enemySettings.speed;
         animator = GetComponent<Animator>();
+        soundManager = GameObject.FindGameObjectWithTag("EffectManager").GetComponent<SoundManager>();
         enemyCollider = GetComponent<Collider2D>();
     }
 
@@ -113,8 +118,8 @@ public class EnemyController : MonoBehaviour
 
     // Health manager function
     public void TakeDamage(int damage) {
+        soundManager.PlayClip(hit);
         health.TakeDamage(damage);
-        // TODO play sound
     }
     private void Die() {
         health.NoHealth -= Die;
@@ -128,7 +133,7 @@ public class EnemyController : MonoBehaviour
             transform.position,
             transform.rotation.eulerAngles
         ) ;
-        // TODO play sound
+        gameObject.SetActive(false);
     }
 
 }

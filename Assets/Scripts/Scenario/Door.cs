@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Door : Item
 {
+    [SerializeField] AudioClip closedDoor;
+    [SerializeField] AudioClip openDoor;
+    SoundManager soundManager;
+
     [Tooltip("Set 0 for open doors, set key id for key doors")]
     public string id = "";
 
@@ -13,6 +17,8 @@ public class Door : Item
 
     protected override void Awake() {
         base.Awake();
+
+        soundManager = GameObject.FindGameObjectWithTag("EffectManager").GetComponent<SoundManager>();
         if (id == "") {
             Debug.LogWarning("Id not set for door", gameObject);
         }
@@ -20,11 +26,11 @@ public class Door : Item
 
     protected override void ActionOnPick(GameObject character) {
         if (id == "0" || SaveDataManager.Instance.keysData.IsKeyCollected(id)) {
+            soundManager.PlayClip(openDoor);
             PerformAction(character);
-            // TODO: door open sound
         } else {
             PlayerDialog.Instance.ShowText("The door is closed, I need a key");
-            // TODO: Error sound
+            soundManager.PlayClip(closedDoor);
         }
     }
 

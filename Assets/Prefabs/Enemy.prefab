@@ -534,8 +534,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 
+  hit: {fileID: 8300000, guid: 01a23a584e7d57d46b8fdc8b395117a4, type: 3}
   enemySettings: {fileID: 11400000, guid: 3c5dfa67104ce564eb3a3fec83fb3959, type: 2}
   detectionCollider: {fileID: 8854820278598189990}
+  deadEnemiesPool: {fileID: 0}
 --- !u!50 &6219404941909131070
 Rigidbody2D:
   serializedVersion: 4
