@@ -119,6 +119,7 @@ public class PlayerController : MonoBehaviour
     public void DeathByTrap() {
         health.NoHealth -= Die;
         health.TakeDamage(playerSettings.health);
+        SaveDataManager.Instance.playerData.health = health.GetCurrentHealth();
         animator.SetTrigger("Death");
     }
 
