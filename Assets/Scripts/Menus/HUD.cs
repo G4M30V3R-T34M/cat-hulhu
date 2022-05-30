@@ -35,9 +35,10 @@ public class HUD : Singleton<HUD>
     private string GetRemainingInvestigatorsText() {
         int remainingLives = SaveDataManager.Instance.gameData.lives;
 
-        if(15 <= remainingLives &&  remainingLives > 10) { return "A lot of investigators left"; }
-        if(10 <= remainingLives &&  remainingLives > 5) { return "Some investigators left"; }
-        if(5 <= remainingLives &&  remainingLives > 0) { return "Few investigators left"; }
+        if(remainingLives > 10) { return "Lots of investigators left"; }
+        if(remainingLives > 5) { return "Some investigators left"; }
+        if(remainingLives > 0) { return "Few investigators left"; }
+        if(remainingLives == 0) { return "Last investigator"; }
         return "";
     }
 
