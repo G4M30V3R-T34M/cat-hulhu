@@ -136,6 +136,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Heart
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 477
+        width: 50
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e01742a1d1a33f24586945c04e7b61fd
+      internalID: -1013639866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NameBar
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 567
+        width: 255
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 39, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b6ac94f73484a54faafaa585ee751e8
+      internalID: -1504414840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -147,6 +189,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Heart: -1013639866
+      NameBar: -1504414840
       PlayerDialog: 1811116584
   spritePackingTag: 
   pSDRemoveMatte: 0
