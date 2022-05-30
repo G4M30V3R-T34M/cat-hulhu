@@ -102,9 +102,8 @@ public class PlayerController : MonoBehaviour
 
     private void Die() {
         soundManager.PlayClip(death);
-        // TODO leave the corpse
-        Spawner.RespawnPlayer();
-        gameObject.SetActive(false);
+        // TODO: Leave corpse
+        animator.SetTrigger("Death");
     }
 
     public void TakeDamage(int damage) {
@@ -115,7 +114,10 @@ public class PlayerController : MonoBehaviour
     public void DeathByTrap() {
         health.NoHealth -= Die;
         health.TakeDamage(playerSettings.health);
+        animator.SetTrigger("Death");
+    }
 
+    public void RespawnPlayer() {
         Spawner.RespawnPlayer();
     }
 }
