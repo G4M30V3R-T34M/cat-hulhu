@@ -1991,6 +1991,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 594389521}
     m_Modifications:
+    - target: {fileID: 308207010680274768, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
+      propertyPath: id
+      value: tut-01
+      objectReference: {fileID: 0}
     - target: {fileID: 2442237293060995623, guid: affeee07c5e0d544a8080852fcf2f997, type: 3}
       propertyPath: m_Name
       value: DeadBody
