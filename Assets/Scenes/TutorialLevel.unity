@@ -893,6 +893,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1523472742}
     m_Modifications:
     - target: {fileID: 2791470225990506899, guid: 89e37cae392e6af41bcd4df80afb4d24, type: 3}
+      propertyPath: id
+      value: tut-01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791470225990506899, guid: 89e37cae392e6af41bcd4df80afb4d24, type: 3}
       propertyPath: drop
       value: 
       objectReference: {fileID: 243081376}
