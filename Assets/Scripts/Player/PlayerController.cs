@@ -125,6 +125,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void DeathByTrap() {
+        isDying = true;
         health.NoHealth -= Die;
         SoundManager.Instance.PlayClip(death);
         health.TakeDamage(playerSettings.health);
