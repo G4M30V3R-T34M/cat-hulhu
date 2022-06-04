@@ -1,17 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Feto;
 
-public class SoundManager : MonoBehaviour
+[RequireComponent(typeof(ObjectPool))]
+public class SoundManager : Singleton<SoundManager>
 {
-    static AudioSource audioSource;
-    void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
+    ObjectPool soundPool;
+
+    protected override void Awake() {
+        base.Awake();
+        soundPool = GetComponent<ObjectPool>();
     }
 
     public void PlayClip(AudioClip clip) {
-        audioSource.clip = clip;
-        audioSource.Play();
+        SoundEffect sound = (SoundEffect)soundPool.GetNext();
+        sound.gameObject.SetActive(true);
+        sound.PlaySound(clip);
     }
 }

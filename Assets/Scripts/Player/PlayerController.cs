@@ -8,7 +8,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private AudioClip hit;
     [SerializeField] private AudioClip death;
-    SoundManager soundManager;
 
     public Item weapon;
     public GameObject itemToPick;
@@ -23,7 +22,6 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         health = GetComponent<HealthManager>();
         playerColors = GetComponent<PlayerColor>();
-        soundManager = GameObject.FindGameObjectWithTag("EffectManager").GetComponent<SoundManager>();
     }
 
     private void Start() {
@@ -107,7 +105,7 @@ public class PlayerController : MonoBehaviour
 
     private void Die() {
         if (!isDying) {
-            soundManager.PlayClip(death);
+            SoundManager.Instance.PlayClip(death);
             SaveDeadBody();
             animator.SetTrigger("Death");
             isDying = true;
@@ -120,12 +118,13 @@ public class PlayerController : MonoBehaviour
             SaveDataManager.Instance.playerData.health = health.GetCurrentHealth();
 
             HUD.Instance.UpdateLives();
-            soundManager.PlayClip(hit);
+            SoundManager.Instance.PlayClip(hit);
         }
     }
 
     public void DeathByTrap() {
         health.NoHealth -= Die;
+        SoundManager.Instance.PlayClip(death);
         health.TakeDamage(playerSettings.health);
         SaveDataManager.Instance.playerData.health = health.GetCurrentHealth();
         animator.SetTrigger("Death");

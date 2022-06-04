@@ -12,7 +12,6 @@ public class EnemyController : MonoBehaviour
     [SerializeField] string id;
 
     [SerializeField] private AudioClip hit;
-    SoundManager soundManager;
 
     [SerializeField] private EnemyScriptable enemySettings;
     [SerializeField] private CircleCollider2D detectionCollider;
@@ -38,7 +37,6 @@ public class EnemyController : MonoBehaviour
         detectionCollider.radius = enemySettings.detectionRadius;
         GetComponent<AIPath>().maxSpeed = enemySettings.speed;
         animator = GetComponent<Animator>();
-        soundManager = GameObject.FindGameObjectWithTag("EffectManager").GetComponent<SoundManager>();
         enemyCollider = GetComponent<Collider2D>();
     }
 
@@ -118,7 +116,7 @@ public class EnemyController : MonoBehaviour
 
     // Health manager function
     public void TakeDamage(int damage) {
-        soundManager.PlayClip(hit);
+        SoundManager.Instance.PlayClip(hit);
         health.TakeDamage(damage);
     }
     private void Die() {

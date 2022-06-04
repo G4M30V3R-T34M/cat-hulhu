@@ -6,7 +6,6 @@ public class Door : Item
 {
     [SerializeField] AudioClip closedDoor;
     [SerializeField] AudioClip openDoor;
-    SoundManager soundManager;
 
     [Tooltip("Set 0 for open doors, set key id for key doors")]
     public string id = "";
@@ -16,7 +15,6 @@ public class Door : Item
 
     protected override void Awake() {
         base.Awake();
-        soundManager = GameObject.FindGameObjectWithTag("EffectManager").GetComponent<SoundManager>();
     }
 
     protected override void Start() {
@@ -38,11 +36,11 @@ public class Door : Item
 
     protected override void ActionOnPick(GameObject character) {
         if (id == "0" || SaveDataManager.Instance.keysData.IsKeyCollected(id)) {
-            soundManager.PlayClip(openDoor);
+            SoundManager.Instance.PlayClip(openDoor);
             PerformAction(character);
         } else {
             PlayerDialog.Instance.ShowText("The door is closed, I need a key");
-            soundManager.PlayClip(closedDoor);
+            SoundManager.Instance.PlayClip(closedDoor);
         }
     }
 

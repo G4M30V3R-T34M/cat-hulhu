@@ -7,7 +7,6 @@ using Pathfinding;
 public class EnemyDummyController : MonoBehaviour
 {
     [SerializeField] private AudioClip hit;
-    SoundManager soundManager;
 
     [SerializeField] private EnemyScriptable enemySettings;
 
@@ -21,12 +20,11 @@ public class EnemyDummyController : MonoBehaviour
         health.SetUp(enemySettings.health); ;
         health.NoHealth += Die;
         animator = GetComponent<Animator>();
-        soundManager = GameObject.FindGameObjectWithTag("EffectManager").GetComponent<SoundManager>();
     }
 
     // Health manager function
     public void TakeDamage(int damage) {
-        soundManager.PlayClip(hit);
+        SoundManager.Instance.PlayClip(hit);
         health.TakeDamage(damage);
     }
     private void Die() {
