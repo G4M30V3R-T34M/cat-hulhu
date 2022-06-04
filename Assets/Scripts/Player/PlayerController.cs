@@ -139,7 +139,8 @@ public class PlayerController : MonoBehaviour
             playerColors.head.color,
             playerColors.eyes.color,
             transform.position,
-            transform.rotation.eulerAngles
+            transform.rotation.eulerAngles,
+            SaveDataManager.Instance.playerData.investigatorName
             );
     }
 

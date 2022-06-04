@@ -20629,10 +20629,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5138895902336565536, guid: 7600bda4e6a3c8f44b7eb5b4a4aa34ba, type: 3}
-      propertyPath: lives
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5138895902336565538, guid: 7600bda4e6a3c8f44b7eb5b4a4aa34ba, type: 3}
       propertyPath: m_Name
       value: SaveData
@@ -20680,18 +20676,6 @@ PrefabInstance:
     - target: {fileID: 5138895902336565542, guid: 7600bda4e6a3c8f44b7eb5b4a4aa34ba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138895902336565543, guid: 7600bda4e6a3c8f44b7eb5b4a4aa34ba, type: 3}
-      propertyPath: backColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138895902336565543, guid: 7600bda4e6a3c8f44b7eb5b4a4aa34ba, type: 3}
-      propertyPath: eyesColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5138895902336565543, guid: 7600bda4e6a3c8f44b7eb5b4a4aa34ba, type: 3}
-      propertyPath: headColor.a
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7600bda4e6a3c8f44b7eb5b4a4aa34ba, type: 3}

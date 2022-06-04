@@ -10,7 +10,8 @@ public struct DeadPlayer
         Color colorHead,
         Color colorEyes,
         Vector3 position,
-        Vector3 rotation
+        Vector3 rotation,
+        string investigatorName
     ) {
         this.id = id;
         this.colorBack = colorBack;
@@ -18,6 +19,7 @@ public struct DeadPlayer
         this.colorEyes = colorEyes;
         this.position = position;
         this.rotation = rotation;
+        this.investigatorName = investigatorName;
     }
 
     public string id;
@@ -26,5 +28,5 @@ public struct DeadPlayer
     public Color colorEyes;
     public Vector3 position;
     public Vector3 rotation;
-
+    public string investigatorName;
 }
