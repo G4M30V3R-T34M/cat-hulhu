@@ -1045,6 +1045,10 @@ PrefabInstance:
       propertyPath: itemSettings
       value: 
       objectReference: {fileID: 11400000, guid: 89453c9b99d28584f996e734134904df, type: 2}
+    - target: {fileID: 903798229186304430, guid: 749c4de63f690b64484f78e6254201ea, type: 3}
+      propertyPath: damageWaitTimeForEnemies
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3446217790611815712, guid: 749c4de63f690b64484f78e6254201ea, type: 3}
       propertyPath: m_RootOrder
       value: 1
