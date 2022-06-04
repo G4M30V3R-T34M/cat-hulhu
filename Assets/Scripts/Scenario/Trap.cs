@@ -13,6 +13,8 @@ public class Trap : MonoBehaviour
     [SerializeField]
     GameObject DeadBodySprite;
 
+    TrapDeadBodyInteraction interaction;
+
     [SerializeField]
     Collider2D obstacle;
 
@@ -27,6 +29,7 @@ public class Trap : MonoBehaviour
         }
 
         trapCollider = GetComponent<Collider2D>();
+        interaction = GetComponentInChildren<TrapDeadBodyInteraction>();
         playerDead = false;
     }
 
@@ -43,9 +46,12 @@ public class Trap : MonoBehaviour
             DeadBodySprite.SetActive(true);
             trapCollider.enabled = false;
             obstacle.enabled = false;
+            interaction.gameObject.SetActive(true);
+            interaction.SetInvestigatorName(trap.investigatorName);
         } else {
             DeadBodySprite.SetActive(false);
             trapCollider.enabled = true;
+            interaction.gameObject.SetActive(false);
         }
     }
 
@@ -54,7 +60,8 @@ public class Trap : MonoBehaviour
             playerDead = true;
             PlayerColor playerColor = collision.gameObject.GetComponent<PlayerColor>();
             Color[] colors = playerColor.GetColors();
-            SaveDataManager.Instance.trapData.SaveTrap(id, colors[0], colors[1], colors[2]);
+            string investigatorName = SaveDataManager.Instance.playerData.investigatorName;
+            SaveDataManager.Instance.trapData.SaveTrap(id, colors[0], colors[1], colors[2], investigatorName);
 
             collision.gameObject.GetComponent<PlayerController>().DeathByTrap();
         }
