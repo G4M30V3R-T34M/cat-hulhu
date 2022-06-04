@@ -43,6 +43,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Translate(Vector3 direction) {
-        transform.Translate(direction * playerSettings.speed * Time.deltaTime, Space.World);
+        Vector3 movement = direction * playerSettings.speed * Time.deltaTime; 
+        
+        if (Input.GetKey(KeyCode.Space)) {
+            movement *= playerSettings.speedMultiplier;
+        }
+
+        transform.Translate(movement, Space.World);
     }
 }
