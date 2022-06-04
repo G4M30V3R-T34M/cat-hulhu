@@ -9,6 +9,9 @@ public class SetPlayerHandColor : MonoBehaviour
 
     private void Awake() {
         image = GetComponent<Image>();
+    }
+
+    private void Start() {
         image.color = SaveDataManager.Instance.playerData.backColor;
     }
 }

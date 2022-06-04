@@ -16,8 +16,11 @@ public class DeadBodyRandomColors : MonoBehaviour
     [SerializeField]
     SpriteRenderer[] blood;
 
-
     private void Awake() {
+        checkID();
+    }
+
+    private void Start() {
         DeadBody body = SaveDataManager.Instance.deadBodyData.GetDeadBody(id);
 
         if (body.id == DeadBodyData.EMPTY_DEAD) {
@@ -25,7 +28,6 @@ public class DeadBodyRandomColors : MonoBehaviour
         } else {
             AssignColors(body);
         }
-        checkID();
     }
 
     private void SetNewColors() {
