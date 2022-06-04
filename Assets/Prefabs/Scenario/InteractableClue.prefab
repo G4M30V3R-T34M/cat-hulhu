@@ -139,6 +139,8 @@ MonoBehaviour:
   itemSettings: {fileID: 11400000, guid: 061d6845d3aef2f44b061ac5fae918c0, type: 2}
   basicItem: 1
   cluePicked: {fileID: 8300000, guid: c34a7c4ecf4615c4aa8c10818a9151fd, type: 3}
+  thinking: {fileID: 0}
+  playerAid: {fileID: 0}
   id: tut-db-01
 --- !u!1 &3130206200401820697
 GameObject:
@@ -150,6 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2219704494917215879}
   - component: {fileID: 6477455274748057085}
+  - component: {fileID: 2850760147410357848}
   m_Layer: 6
   m_Name: Question
   m_TagString: Untagged
@@ -224,3 +227,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2850760147410357848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3130206200401820697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5c98f6ba4cf2374580655633036e342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

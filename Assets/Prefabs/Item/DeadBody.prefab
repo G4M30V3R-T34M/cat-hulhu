@@ -721,7 +721,8 @@ PrefabInstance:
       propertyPath: playerAid
       value: 
       objectReference: {fileID: 8474057626610993783}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1862591446252483828, guid: f264b5bc41bd45247867c86c85e20f6f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f264b5bc41bd45247867c86c85e20f6f, type: 3}
 --- !u!4 &5776361152459324818 stripped
 Transform:
