@@ -1108,8 +1108,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -396, y: -228}
-  m_SizeDelta: {x: 716.2, y: 308.43}
+  m_AnchoredPosition: {x: -396, y: -203.03}
+  m_SizeDelta: {x: 716.2, y: 358.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1525981032
 MonoBehaviour:
@@ -1133,8 +1133,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'W A S D -- Move
 
+    SPACE -- RUN
 
-    E -- Interact (Pick up objects / Open doors)'
+
+    E -- Interact (Pick up objects
+    / Open doors)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c034ede4f7e5a3d4ab9cf8edaab83465, type: 2}
   m_sharedMaterial: {fileID: 6983226486207466497, guid: c034ede4f7e5a3d4ab9cf8edaab83465, type: 2}
@@ -1161,7 +1164,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 59.1
+  m_fontSize: 54.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
