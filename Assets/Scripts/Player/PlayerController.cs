@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private HealthManager health;
     public bool pickableItem;
     PlayerColor playerColors;
+    bool isDying = false;
 
     Animator animator;
 
@@ -105,17 +106,22 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Die() {
-        soundManager.PlayClip(death);
-        SaveDeadBody();
-        animator.SetTrigger("Death");
+        if (!isDying) {
+            soundManager.PlayClip(death);
+            SaveDeadBody();
+            animator.SetTrigger("Death");
+            isDying = true;
+        }
     }
 
     public void TakeDamage(int damage) {
-        health.TakeDamage(damage);
-        SaveDataManager.Instance.playerData.health = health.GetCurrentHealth();
+        if (!isDying) {
+            health.TakeDamage(damage);
+            SaveDataManager.Instance.playerData.health = health.GetCurrentHealth();
 
-        HUD.Instance.UpdateLives();
-        soundManager.PlayClip(hit);
+            HUD.Instance.UpdateLives();
+            soundManager.PlayClip(hit);
+        }
     }
 
     public void DeathByTrap() {
