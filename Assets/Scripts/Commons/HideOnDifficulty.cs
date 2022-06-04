@@ -6,13 +6,17 @@ public class HideOnDifficulty : MonoBehaviour
 {
     SpriteRenderer sprite;
 
+    [SerializeField] Difficulty[] difficulties;
+
     private void Awake() {
         sprite = GetComponent<SpriteRenderer>();
     }
 
     private void Start() {
-        if (SaveDataManager.Instance.gameData.difficulty == Difficulty.HARD) {
-            sprite.enabled = false;
+        foreach (Difficulty diff in difficulties) {
+            if (diff == SaveDataManager.Instance.gameData.difficulty) {
+                sprite.enabled = false;
+            }
         }
     }
 }

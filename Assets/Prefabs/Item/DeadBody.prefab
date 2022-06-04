@@ -709,6 +709,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractableClue
       objectReference: {fileID: 0}
+    - target: {fileID: 2850760147410357848, guid: f264b5bc41bd45247867c86c85e20f6f, type: 3}
+      propertyPath: difficulties.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850760147410357848, guid: f264b5bc41bd45247867c86c85e20f6f, type: 3}
+      propertyPath: difficulties.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8092170930869165855, guid: f264b5bc41bd45247867c86c85e20f6f, type: 3}
       propertyPath: thinking
       value: 
