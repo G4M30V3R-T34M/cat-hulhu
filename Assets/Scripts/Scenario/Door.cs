@@ -39,7 +39,7 @@ public class Door : Item
             SoundManager.Instance.PlayClip(openDoor);
             PerformAction(character);
         } else {
-            PlayerDialog.Instance.ShowText("The door is closed, I need a key");
+            PlayerDialog.Instance.ShowText(itemSettings.description);
             SoundManager.Instance.PlayClip(closedDoor);
         }
     }
