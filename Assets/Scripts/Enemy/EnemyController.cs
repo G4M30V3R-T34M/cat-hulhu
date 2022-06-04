@@ -18,6 +18,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] ObjectPool deadEnemiesPool;
     Collider2D enemyCollider;
 
+    [SerializeField] GameObject interactable;
+
 
     private AIDestinationSetter destinationSetter;
     HealthManager health;
@@ -38,6 +40,7 @@ public class EnemyController : MonoBehaviour
         GetComponent<AIPath>().maxSpeed = enemySettings.speed;
         animator = GetComponent<Animator>();
         enemyCollider = GetComponent<Collider2D>();
+        interactable.SetActive(false);
     }
 
     private void CheckId() {
@@ -126,6 +129,7 @@ public class EnemyController : MonoBehaviour
         destinationSetter.target = null;
         detectionCollider.enabled = false;
         enemyCollider.enabled = false;
+        interactable.SetActive(true);
         SaveDataManager.Instance.enemiesData.SaveEnemy(
             this.id,
             transform.position,
