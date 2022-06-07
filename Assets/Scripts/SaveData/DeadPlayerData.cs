@@ -11,7 +11,7 @@ public class DeadPlayerData : MonoBehaviour
         deadPlayers = new List<DeadPlayer>();
     }
     public DeadPlayer GetDeadPlayer(string playerId) {
-        DeadPlayer player = new DeadPlayer(EMPTY_PLAYER, Color.black, Color.black, Color.black, Vector3.zero, Vector3.zero);
+        DeadPlayer player = new DeadPlayer(EMPTY_PLAYER, Color.black, Color.black, Color.black, Vector3.zero, Vector3.zero, EMPTY_PLAYER);
 
         int i = 0;
         while (i < deadPlayers.Count && player.id  == EMPTY_PLAYER) {
@@ -24,8 +24,16 @@ public class DeadPlayerData : MonoBehaviour
         return player;
     }
 
-    public void SaveDeadPlayer(string id, Color backColor, Color headColor, Color eyesColor, Vector3 position, Vector3 rotation) {
-        DeadPlayer player = new DeadPlayer(id, backColor, headColor, eyesColor, position, rotation);
+    public void SaveDeadPlayer(
+        string id,
+        Color backColor,
+        Color headColor,
+        Color eyesColor,
+        Vector3 position,
+        Vector3 rotation,
+        string investigatorName
+    ) {
+        DeadPlayer player = new DeadPlayer(id, backColor, headColor, eyesColor, position, rotation, investigatorName);
         deadPlayers.Add(player);
     }
 

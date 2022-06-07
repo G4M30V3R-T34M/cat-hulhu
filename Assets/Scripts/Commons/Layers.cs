@@ -4,4 +4,6 @@ public enum Layers
     Obstacle = 7,
     Player = 8,
     Enemy = 9,
+    PlayerAttack = 10,
+    EnemyAttack = 11,
 }

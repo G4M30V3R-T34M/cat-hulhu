@@ -8,13 +8,13 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private AudioClip hit;
     [SerializeField] private AudioClip death;
-    SoundManager soundManager;
 
     public Item weapon;
     public GameObject itemToPick;
     private HealthManager health;
     public bool pickableItem;
     PlayerColor playerColors;
+    bool isDying = false;
 
     Animator animator;
 
@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         health = GetComponent<HealthManager>();
         playerColors = GetComponent<PlayerColor>();
-        soundManager = GameObject.FindGameObjectWithTag("EffectManager").GetComponent<SoundManager>();
     }
 
     private void Start() {
@@ -65,7 +64,9 @@ public class PlayerController : MonoBehaviour
     private void PickItem() {
         Item item = itemToPick.GetComponent<Item>();
         item.Pick(this.gameObject);
-        pickableItem = false;
+        if (item.basicItem) {
+            pickableItem = false;
+        }
         if (item.IsWeapon()) {
             if (weapon != null) {
                 weapon.DropItem(this.transform.position);
@@ -105,21 +106,28 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Die() {
-        soundManager.PlayClip(death);
-        SaveDeadBody();
-        animator.SetTrigger("Death");
+        if (!isDying) {
+            SoundManager.Instance.PlayClip(death);
+            SaveDeadBody();
+            animator.SetTrigger("Death");
+            isDying = true;
+        }
     }
 
     public void TakeDamage(int damage) {
-        health.TakeDamage(damage);
-        SaveDataManager.Instance.playerData.health = health.GetCurrentHealth();
+        if (!isDying) {
+            health.TakeDamage(damage);
+            SaveDataManager.Instance.playerData.health = health.GetCurrentHealth();
 
-        HUD.Instance.UpdateLives();
-        soundManager.PlayClip(hit);
+            HUD.Instance.UpdateLives();
+            SoundManager.Instance.PlayClip(hit);
+        }
     }
 
     public void DeathByTrap() {
+        isDying = true;
         health.NoHealth -= Die;
+        SoundManager.Instance.PlayClip(death);
         health.TakeDamage(playerSettings.health);
         SaveDataManager.Instance.playerData.health = health.GetCurrentHealth();
         animator.SetTrigger("Death");
@@ -132,7 +140,8 @@ public class PlayerController : MonoBehaviour
             playerColors.head.color,
             playerColors.eyes.color,
             transform.position,
-            transform.rotation.eulerAngles
+            transform.rotation.eulerAngles,
+            SaveDataManager.Instance.playerData.investigatorName
             );
     }
 

@@ -1,9 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
 public class Spawner
 {
     static float BIGMAPX = 0;
     static float BIGMAPY = -11;
 
-     static string[] names = new string[] {
+    static List<string> names = new List<string> {
         "Agatha Crane",
         "Agnes Baker",
         "Akachi Onyele",
@@ -19,10 +23,47 @@ public class Spawner
         "Darrell Simmons",
         "Dexter Drake",
         "Diana Stanley",
-        "Father Mateo"
+        "Father Mateo",
+        "Finn Edwards",
+        "George Barnaby",
+        "Gloria Goldberg",
+        "Hank Samson",
+        "Harvey Walters",
+        "Jacqueline Fine",
+        "Jenny Barnes",
+        "Jim Culver",
+        "Joe Diamond",
+        "Kate Winthrop",
+        "Leo Anderson",
+        "Lily Chen",
+        "Lola Hayes",
+        "Luke Robinson",
+        "Mandy Thompson",
+        "Marie Lambeau",
+        "Mark Harrigan",
+        "Michael McGlen",
+        "Minh Thi Phan",
+        "Monterey Jack",
+        "Norman Withers",
+        "Patrice Hathaway",
+        "Preston Fairmont",
+        "Rex Murphy",
+        "Rita Young",
+        "Roland Banks",
+        "Sefina Rousseau",
+        "Silas Marsh",
+        "Sister Mary",
+        "\"Skids\" O'Toole",
+        "Tommy Muldoon",
+        "Tony Morgan",
+        "Trish Scarborough",
+        "Ursula Downs",
+        "Vincent Lee",
+        "Wendy Adams",
+        "William Yorick",
+        "Wilson Richards",
+        "Zoey Samaras"
     };
-
-    static int nameIndex = 0;
 
     public static void RespawnPlayer() {
         if (PlayerHasLivesLeft()) {
@@ -54,8 +95,9 @@ public class Spawner
     }
 
     private static string GetNextName() {
-        string newName = names[nameIndex];
-        nameIndex += 1;
+        int idx = Random.Range(0, names.Count);
+        string newName = names[idx];
+        names.RemoveAt(idx);
         return newName;
     }
 

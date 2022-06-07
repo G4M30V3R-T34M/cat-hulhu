@@ -8,7 +8,7 @@ public class TrapData : MonoBehaviour
     List<ActivatedTrap> activatedTraps = new List<ActivatedTrap>();
 
     public ActivatedTrap GetTrap(string trapId) {
-        ActivatedTrap trap = new ActivatedTrap(EMPTY_TRAP, Color.black, Color.black, Color.black);
+        ActivatedTrap trap = new ActivatedTrap(EMPTY_TRAP, Color.black, Color.black, Color.black, EMPTY_TRAP);
 
         int i = 0;
         while (i < activatedTraps.Count && trap.id  == EMPTY_TRAP) {
@@ -21,8 +21,8 @@ public class TrapData : MonoBehaviour
         return trap;
     }
 
-    public void SaveTrap(string id, Color backColor, Color headColor, Color eyesColor) {
-        ActivatedTrap trap = new ActivatedTrap(id, backColor, headColor, eyesColor);
+    public void SaveTrap(string id, Color backColor, Color headColor, Color eyesColor, string investigatorName) {
+        ActivatedTrap trap = new ActivatedTrap(id, backColor, headColor, eyesColor, investigatorName);
         activatedTraps.Add(trap);
     }
 

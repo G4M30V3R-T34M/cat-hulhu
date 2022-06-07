@@ -893,6 +893,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1523472742}
     m_Modifications:
     - target: {fileID: 2791470225990506899, guid: 89e37cae392e6af41bcd4df80afb4d24, type: 3}
+      propertyPath: id
+      value: tut-01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791470225990506899, guid: 89e37cae392e6af41bcd4df80afb4d24, type: 3}
       propertyPath: drop
       value: 
       objectReference: {fileID: 243081376}
@@ -1108,8 +1112,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -396, y: -228}
-  m_SizeDelta: {x: 716.2, y: 308.43}
+  m_AnchoredPosition: {x: -396, y: -203.03}
+  m_SizeDelta: {x: 716.2, y: 358.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1525981032
 MonoBehaviour:
@@ -1133,8 +1137,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'W A S D -- Move
 
+    SPACE -- RUN
 
-    E -- Interact (Pick up objects / Open doors)'
+
+    E -- Interact (Pick up objects
+    / Open doors)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c034ede4f7e5a3d4ab9cf8edaab83465, type: 2}
   m_sharedMaterial: {fileID: 6983226486207466497, guid: c034ede4f7e5a3d4ab9cf8edaab83465, type: 2}
@@ -1161,7 +1168,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 59.1
+  m_fontSize: 54.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1219,8 +1226,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5138895902336565536, guid: 7600bda4e6a3c8f44b7eb5b4a4aa34ba, type: 3}
-      propertyPath: lives
-      value: 0
+      propertyPath: difficulty
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5138895902336565538, guid: 7600bda4e6a3c8f44b7eb5b4a4aa34ba, type: 3}
       propertyPath: m_Name

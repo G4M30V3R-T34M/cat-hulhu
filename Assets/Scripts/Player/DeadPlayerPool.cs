@@ -18,14 +18,15 @@ public class DeadPlayerPool : MonoBehaviour
     private void GenerateDeadPlayers() {
         foreach (DeadPlayer deadPlayer in SaveDataManager.Instance.deadPlayerData.deadPlayers) {
             if (deadPlayer.id == UnityEngine.SceneManagement.SceneManager.GetActiveScene().name) {
-                DeadPlayerColors deadPlayerColors = (DeadPlayerColors)pool.GetNext();
-                deadPlayerColors.SetValues(
+                DeadPlayerController deadPlayerController = (DeadPlayerController)pool.GetNext();
+                deadPlayerController.SetValues(
                     deadPlayer.colorBack,
                     deadPlayer.colorHead,
                     deadPlayer.colorEyes,
                     deadPlayer.position,
-                    deadPlayer.rotation);
-                deadPlayerColors.gameObject.SetActive(true);
+                    deadPlayer.rotation,
+                    deadPlayer.investigatorName);
+                deadPlayerController.gameObject.SetActive(true);
             }
         }
     }

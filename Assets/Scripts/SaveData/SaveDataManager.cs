@@ -11,6 +11,7 @@ using Feto;
 [RequireComponent(typeof(DeadBodyData))]
 [RequireComponent(typeof(DeadPlayerData))]
 [RequireComponent(typeof(DoorsData))]
+[RequireComponent(typeof(DummyEnemiesData))]
 public class SaveDataManager : SingletonPersistent<SaveDataManager>
 {
     public PlayerData playerData;
@@ -23,6 +24,7 @@ public class SaveDataManager : SingletonPersistent<SaveDataManager>
     public DeadBodyData deadBodyData;
     public DeadPlayerData deadPlayerData;
     public DoorsData doorsData;
+    public DummyEnemiesData dummyEnemiesData;
 
     protected override void Awake() {
         base.Awake();
@@ -36,6 +38,7 @@ public class SaveDataManager : SingletonPersistent<SaveDataManager>
         deadBodyData = GetComponent<DeadBodyData>();
         deadPlayerData = GetComponent<DeadPlayerData>();
         doorsData = GetComponent<DoorsData>();
+        dummyEnemiesData = GetComponent<DummyEnemiesData>();
     }
 
     public void ResetData() {

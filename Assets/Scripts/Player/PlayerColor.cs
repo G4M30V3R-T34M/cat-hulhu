@@ -7,7 +7,7 @@ public class PlayerColor : MonoBehaviour
     [SerializeField]
     public SpriteRenderer back, head, eyes;
 
-    private void Awake() {
+    private void Start() {
         UpdateColors();
     }
 

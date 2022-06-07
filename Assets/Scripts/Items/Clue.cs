@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Clue : Item
 {
-    [SerializeField] AudioClip cluePicked;
-    SoundManager soundManager;
+    [SerializeField] AudioClip cluePicked, thinking;
+    [SerializeField] GameObject playerAid;
 
     public string id = "";
+    bool searched = false;
 
     protected override void Awake() {
         base.Awake();
-        soundManager = GameObject.FindGameObjectWithTag("EffectManager").GetComponent<SoundManager>();
         if (id == "") {
             Debug.LogError("Id not set for clue", gameObject);
         }
@@ -19,15 +19,21 @@ public class Clue : Item
 
     protected override void Start() {
         if (SaveDataManager.Instance.cluesData.IsClueCollected(id)) {
-            gameObject.SetActive(false);
+            searched = true;
+            playerAid.SetActive(false);
         }
     }
 
     protected override void ActionOnPick(GameObject character) {
-        soundManager.PlayClip(cluePicked);
-        SaveDataManager.Instance.cluesData.CollectClue(id);
-        gameObject.SetActive(false);
+        if (!searched) {
+            SaveDataManager.Instance.cluesData.CollectClue(id);
+            HUD.Instance.UpdateClueNumber();
+            playerAid.SetActive(false);
+            SoundManager.Instance.PlayClip(cluePicked);
+            searched = true;
+        } else {
+            SoundManager.Instance.PlayClip(thinking);
+        }
         PlayerDialog.Instance.ShowText(itemSettings.description);
-        HUD.Instance.UpdateClueNumber();
     }
 }

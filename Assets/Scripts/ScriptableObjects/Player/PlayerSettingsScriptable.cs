@@ -10,4 +10,7 @@ public class PlayerSettingsScriptable : ScriptableObject
 
     [Range(1, 5)]
     public int health;
+
+    [Range(1f, 2f)]
+    public float speedMultiplier;
 }
